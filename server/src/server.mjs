@@ -1,6 +1,7 @@
 import express from 'express';
 import { MongoClient } from 'mongodb';
 import dotenv from 'dotenv';
+import cors from "cors";
 import UserRouter from "./routers/User.mjs";
 
 dotenv.config();
@@ -11,9 +12,16 @@ const URI = process.env.MONGO_CLIENT_URI;
 const app = express();
 
 app.use(express.json());
+app.use(
+    cors({
+      origin: "http://localhost:5173" || config.origin,
+      credentials: true,
+    })
+  );
 
-export const client = new MongoClient(process.env.MONGO_CLIENT_URI)
+export const client = new MongoClient(URI)
 export const db_name = "enrollDatabase"
+export const SECRET = process.env.PORT;
 
 
 app.get("/",(req,res) =>{
