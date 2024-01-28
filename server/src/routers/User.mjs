@@ -5,6 +5,6 @@ import { login } from "../controller/User/login.mjs"
 const router = express.Router(); 
 
 router.post("/register",register);
-router.put("/login",login);
+router.post("/login",login);
 
 export default router;

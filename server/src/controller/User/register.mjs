@@ -2,13 +2,14 @@ import { client , db_name} from '../../server.mjs';
 import { hashPassword } from '../../utils/ManagePassword.mjs';
 export const register = async(req,res) =>{
     try{
-        const {username,password,gmail,fname,lname} = req.body;
+        const {username,password,gmail,fname,lname,phonenumber} = req.body;
         const data = {
                     username,
                     password:await hashPassword(password),
                     gmail,
                     fname,
-                    lname
+                    lname,
+                    phonenumber
                 }
         await client.connect()
         await client.db(db_name).collection("userData").insertOne(data);
