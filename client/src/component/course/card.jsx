@@ -1,4 +1,4 @@
-export default function Card({ altname, course, pg, img }) {
+export default function Card({ altname, course, pg, img ,badge}) {
     return (
         <div className="card bg-neutral-50 text-black shadow-xl mx-auto">
             <figure>
@@ -13,8 +13,7 @@ export default function Card({ altname, course, pg, img }) {
                     {pg}
                 </p>
                 <div className="card-actions justify-end mt-4">
-                    <div className="badge badge-outline mr-2">Fashion</div> 
-                    <div className="badge badge-outline">Products</div>
+                    <div className="badge badge-outline mr-2">{badge}</div> 
                 </div>
             </div>
         </div>
