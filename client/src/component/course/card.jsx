@@ -1,8 +1,8 @@
 export default function Card({ altname, course, pg, img }) {
     return (
-        <div className="card md:max-w-md lg:max-w-lg xl:max-w-xl bg-neutral-50 text-black shadow-xl mx-auto">
+        <div className="card bg-neutral-50 text-black shadow-xl mx-auto">
             <figure>
-                <img className="w-full h-auto" src={img} alt={altname} />
+                <img className="w-full" src={img} alt={altname} />
             </figure>
             <div className="card-body p-4">
                 <h2 className="card-title text-lg md:text-xl font-bold">
