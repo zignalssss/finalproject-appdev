@@ -5,6 +5,9 @@ export default function App() {
         <>
             <Routes>
                 <Route path="/" element={<Homepage/>}/>
+                {/* <Route path="/signup" element={<Homepage/>}/>
+                <Route path="/signin" element={<Homepage/>}/> */}
+
             </Routes>
         </>
     )

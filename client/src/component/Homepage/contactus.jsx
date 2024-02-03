@@ -1,15 +1,21 @@
 import {BiLogoGmail} from 'react-icons/bi';
 import {FaPhoneSquareAlt} from 'react-icons/fa';
 import {FaGithubSquare} from 'react-icons/fa';
-
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const ContactUS = () =>{
+    useEffect(() => {
+        AOS.init({ duration: 500 });
+      }, []);
+      
     return(
         <div className="h-fulll h-screen bg-no-repeat bg-cover bg-homepage-img-2 flex justify-center items-center">  
             <div className="grid grid-cols-1 md:grid-cols-6 gap-3" data-aos="fade-up">
                 <div className="col-span-1 md:col-start-1 md:col-span-3">
                     <div className="m-10">
-                        <h1 className="text-white font-kanit text-center text-2xl md:text-2xl font-extrabold">Contact Us</h1>
+                        <h1 className="underline underline-offset-8 text-white font-kanit text-center text-2xl md:text-2xl font-extrabold">Contact Us</h1>
                     </div>
                     <div className="text-white flex flex-col gap-y-5 items-center">
                         <div className="inline-flex">
@@ -33,6 +39,7 @@ const ContactUS = () =>{
                     </div> 
                 </div>
             </div>
+            
         </div>
     )
 }

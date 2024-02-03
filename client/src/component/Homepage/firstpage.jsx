@@ -15,7 +15,7 @@ const Firstpage = () =>{
                 <h1 className="text-3xl font-bold">
                     &lt; Online Course for 
                     <Typewriter
-                        words={[' Computer Engineering', ' All Time. Always', ' Nisit', ' A++']}
+                        words={[' Computer Engineering', ' All Time. Always', ' Nisit']}
                         loop={0}
                         cursor
                         cursorStyle='| '
@@ -28,6 +28,7 @@ const Firstpage = () =>{
                 <h2 className="text-1xl font-medium">อัพสกิลความรู้เพื่อคุณโดยเฉพาะ</h2>
             </div>
         </div>
+        
     </div>
     )
 }
