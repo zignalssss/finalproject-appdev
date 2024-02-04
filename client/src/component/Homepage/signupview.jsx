@@ -16,8 +16,8 @@ const SignupView = () =>{
                 <div className=" text-white font-kanit text-center text-2xl md:text-2xl font-extrabold" data-aos="fade-up">
                     <h1 className="py-10 underline underline-offset-8">ลงทะเบียนเพื่อดูคอร์สทั้งหมด</h1>
                     <div className="m-10 grid gap-20 grid-cols-2">
-                        <ButtonLink tailwind = "btn btn-outline btn-lg " to = "/signup" >Sign up</ButtonLink>
-                        <ButtonLink tailwind = "btn btn-outline btn-lg" to = "/signin" >Sign in</ButtonLink>
+                        <ButtonLink tailwind = "btn btn-lg bg-white text-black shadow-lg shadow-zinc-200 hover:text-white hover:bg-zinc-900 hover:shadow-neutral-800" to = "/signup" >Sign up</ButtonLink>
+                        <ButtonLink tailwind = "btn btn-lg bg-white text-black shadow-lg shadow-zinc-200 hover:text-white hover:bg-zinc-900 hover:shadow-neutral-800" to = "/signin" >Sign in</ButtonLink>
                     </div>
                 </div>
                
@@ -28,12 +28,12 @@ const SignupView = () =>{
                     <p>developed by steganogosaurus Team<br/>Copyright © 2024 - All right reserved by steganogosaurus Team</p>
                 </aside> 
                 <nav>
-                    <h6 className="footer-title">Tool</h6> 
+                    <h6 className="footer-title">Tools</h6> 
                     <div className="text-3xl grid grid-flow-col gap-4">
-                    <a><SiMongodb/></a>
-                    <a><SiExpress/></a>
-                    <a><FaReact /></a>
-                    <a><DiNodejs/></a>
+                    <a href="https://www.mongodb.com/" target="blank"><SiMongodb/></a>
+                    <a href="https://expressjs.com/" target="blank"><SiExpress/></a>
+                    <a href="https://react.dev/learn" target="blank"><FaReact /></a>
+                    <a href="https://nodejs.org/en" target="blank"><DiNodejs/></a>
                     </div>
                 </nav>
             </footer>
