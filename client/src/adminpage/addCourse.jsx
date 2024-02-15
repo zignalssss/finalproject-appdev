@@ -9,8 +9,8 @@ const AddCourse = () => {
     thumbnail_cover: '',
     pg: '',
     badge: '',
-    sub_course: '',
-    sub_course_thumbnail: '',
+    sub_course: [],
+    sub_course_thumbnail: [],
     point_enroll: '',
     course_date: ''
   });
@@ -47,14 +47,24 @@ const AddCourse = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <>
+     <form className="flex flex-col gap-y-5"onSubmit={handleSubmit}>
       <input type="text" name="course_id" value={formData.course_id} onChange={handleChange} placeholder="Course ID" />
       <input type="text" name="courseName" value={formData.courseName} onChange={handleChange} placeholder="Course Name" />
       <input type="text" name="altname" value={formData.altname} onChange={handleChange} placeholder="Alternate Name" />
-      {/* Repeat similar inputs for other fields */}
-      <button type="submit">Submit</button>
+      <input type="text" name="thumbnail_cover" value={formData.thumbnail_cover} onChange={handleChange} placeholder="thumbnail_cover" />
+      <input type="text" name="pg" value={formData.pg} onChange={handleChange} placeholder="pg" />
+      <input type="text" name="badge" value={formData.badge} onChange={handleChange} placeholder="badge" />
+      <input type="text" name="sub_course" value={formData.sub_course} onChange={handleChange} placeholder="sub_course" />
+      <input type="text" name="sub_course_thumbnail" value={formData.ub_course_thumbnail} onChange={handleChange} placeholder="ub_course_thumbnail" />
+      <input type="text" name="point_enroll" value={formData.point_enroll} onChange={handleChange} placeholder="point_enroll" />
+      <input type="text" name="course_date" value={formData.altname} onChange={handleChange} placeholder="course_date" />
+
+      <button className='btn'type="submit">Submit</button>
     </form>
+    </>
+ 
   );
 };
 
-export default MyComponent;
+export default AddCourse;
