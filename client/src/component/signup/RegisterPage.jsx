@@ -12,6 +12,7 @@ const RegisterPage = () => {
   });
   const [message, setMessage] = useState('');
 
+  //Set data from user input to fromData variable
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prevState => ({
@@ -20,6 +21,7 @@ const RegisterPage = () => {
     }));
   };
 
+  //submit and post data to Database (MongoDB)
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
