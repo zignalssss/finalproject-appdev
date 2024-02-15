@@ -3,6 +3,7 @@ import { MongoClient } from 'mongodb';
 import dotenv from 'dotenv';
 import cors from "cors";
 import UserRouter from "./routers/User.mjs";
+import AddCourse from "./routers/Course.mjs";
 
 dotenv.config();
 
@@ -21,7 +22,7 @@ app.use(
 
 export const client = new MongoClient(URI)
 export const db_name = "enrollDatabase"
-export const SECRET = process.env.PORT;
+export const SECRET = process.env.SECRET;
 
 
 app.get("/",(req,res) =>{
@@ -29,6 +30,7 @@ app.get("/",(req,res) =>{
 })
 
 app.use("/api/user",UserRouter);
+app.use("/api/course",AddCourse)
 
 app.listen(PORT,()=>{
     console.log(`server is Running on http://localhost:${PORT}`);
