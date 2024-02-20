@@ -3,6 +3,7 @@ import { MongoClient } from 'mongodb';
 import dotenv from 'dotenv';
 import cors from "cors";
 import UserRouter from "./routers/User.mjs";
+import AddCourse from "./routers/Course.mjs";
 
 dotenv.config();
 
@@ -29,6 +30,7 @@ app.get("/",(req,res) =>{
 })
 
 app.use("/api/user",UserRouter);
+app.use("/api/course",AddCourse)
 
 app.listen(PORT,()=>{
     console.log(`server is Running on http://localhost:${PORT}`);

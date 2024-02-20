@@ -1,3 +1,4 @@
+
 import Tilt from 'react-parallax-tilt'
 import React, { useState } from 'react';
 import axios from 'axios';
@@ -74,7 +75,6 @@ const RegisterPage = () => {
           </div>
         </form>
       </Tilt>
-
       <div className='text-white'>
         {message && <p>{message}</p>}
       </div>
