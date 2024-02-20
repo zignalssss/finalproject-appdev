@@ -21,7 +21,7 @@ app.use(
 
 export const client = new MongoClient(URI)
 export const db_name = "enrollDatabase"
-export const SECRET = process.env.PORT;
+export const SECRET = process.env.SECRET;
 
 
 app.get("/",(req,res) =>{
