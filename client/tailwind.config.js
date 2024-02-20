@@ -19,6 +19,15 @@ export default {
           inter :["Inter", "sans-serif"],
           kanit :["Kanit", "sans-serif"]
       },
+
+      boxShadow:{
+        '5xl': '20px 20px 50px rgba(0,0,0,0.5)',
+      },
+
+      backgroundImage:{
+          'login_img1':"url('src/assets/img/BG_image_blur.jpg')",
+          'login_imge':"url('src/assets/img/BG_image.jpg')",
+      }
     },
   },
   plugins: [require("daisyui")],
