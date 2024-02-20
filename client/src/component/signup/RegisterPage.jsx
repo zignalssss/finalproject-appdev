@@ -13,7 +13,8 @@ const RegisterPage = () => {
     phonenumber: ''
   });
   const [message, setMessage] = useState('');
-
+  const [status,setStatus] = useState(false);
+  
   //Set data from user input to fromData variable
   const handleChange = (e) => {
     const { name, value } = e.target;
