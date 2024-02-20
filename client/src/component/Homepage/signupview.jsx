@@ -17,7 +17,7 @@ const SignupView = () =>{
                     <h1 className="py-10 underline underline-offset-8">ลงทะเบียนเพื่อดูคอร์สทั้งหมด</h1>
                     <div className="m-10 grid gap-20 grid-cols-2">
                         <ButtonLink tailwind = "btn btn-lg bg-white text-black shadow-lg shadow-zinc-200 hover:text-white hover:bg-zinc-900 hover:shadow-neutral-800" to = "/signup" >Sign up</ButtonLink>
-                        <ButtonLink tailwind = "btn btn-lg bg-white text-black shadow-lg shadow-zinc-200 hover:text-white hover:bg-zinc-900 hover:shadow-neutral-800" to = "/signin" >Sign in</ButtonLink>
+                        <ButtonLink tailwind = "btn btn-lg bg-white text-black shadow-lg shadow-zinc-200 hover:text-white hover:bg-zinc-900 hover:shadow-neutral-800" to = "/Login" >Sign in</ButtonLink>
                     </div>
                 </div>
                
