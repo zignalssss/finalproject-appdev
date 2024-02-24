@@ -16,9 +16,6 @@ const LoginPage = () => {
   const [message, setMessage] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const redirectToAllCourses = () => {
-    window.location.href = '/allcourse';
-  };
   //Set data from user input to fromData variable
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -34,7 +31,7 @@ const LoginPage = () => {
       const response = await axios.post('http://localhost:5050/api/user/login', formData);
       setMessage('Login successful!');
       setIsLoggedIn(true);
-      redirectToAllCourses();
+      <Navigate to="/allcourse" replace={true} />
       // Optionally, you can redirect the user to another page upon successful registration
       // window.location.href = '/login';
 
