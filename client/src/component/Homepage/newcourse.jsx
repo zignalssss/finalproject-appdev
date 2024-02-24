@@ -4,6 +4,7 @@ import "aos/dist/aos.css";
 import Card from "../course/card"
 const Newcourse = () =>{
     useEffect(() => {
+        
         AOS.init({ duration: 500 });
       }, []);
     const course_1 = {

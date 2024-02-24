@@ -3,7 +3,8 @@ import Homepage from "./component/Homepage/Homepage";
 import Signup from "./component/signup/RegisterPage"
 import LoginPage from "./component/Login/LoginPage";
 import Allcourse from "./component/Allcourse/allcourse";
-import PrivateRoutes from './component/PrivateRoute/PrivateRoute'
+import AddCourse from "./adminpage/addCourse";
+import LearningPath from "./component/learningPath/LearningPath";
 
 export default function App() {
     return(
@@ -13,11 +14,14 @@ export default function App() {
                 <Route path="/signup" element={<Signup/>}/>
                 <Route path="/signin" element={<LoginPage/>}/>
                 <Route path="/allcourse" element={<Allcourse/>}/>
-
+                <Route path="/webpath" element={<LearningPath/>}/>
                 {/* <Route element={<PrivateRoutes />}>
                    
                 </Route> */}
 
+
+                
+                <Route path="/admin/addcourse" element={<AddCourse/>}></Route>
             </Routes>
         </>
     )

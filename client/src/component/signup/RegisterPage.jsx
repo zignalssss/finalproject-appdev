@@ -1,3 +1,4 @@
+
 import Tilt from 'react-parallax-tilt'
 import React, { useState } from 'react';
 import axios from 'axios';
@@ -12,7 +13,8 @@ const RegisterPage = () => {
     phonenumber: ''
   });
   const [message, setMessage] = useState('');
-
+  const [status,setStatus] = useState(false);
+  
   //Set data from user input to fromData variable
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -74,7 +76,6 @@ const RegisterPage = () => {
           </div>
         </form>
       </Tilt>
-
       <div className='text-white'>
         {message && <p>{message}</p>}
       </div>

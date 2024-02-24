@@ -28,7 +28,6 @@ const Firstpage = () =>{
                 <h2 className="text-1xl font-medium">อัพสกิลความรู้เพื่อคุณโดยเฉพาะ</h2>
             </div>
         </div>
-        
     </div>
     )
 }
