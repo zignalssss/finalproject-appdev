@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import axios from "axios";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Card from "../course/card"

@@ -3,7 +3,7 @@ import { useState,useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Card from "../course/course"
-const allcourse = () => {
+const MainCourse = () => {
   useEffect(() => {
    
     AOS.init({ duration: 500 });
@@ -54,7 +54,7 @@ const allcourse = () => {
   const courses = [course_1, course_2, course_3,course_4, course_5, course_6,course_1, course_2, course_3];
   
     return (
-      <div className="  h-fulll h-screen bg-no-repeat bg-cover bg-homepage-img-1 text-white font-kanit flex py-40 justify-center mx-auto px-24 " >
+      <div className=" bg-gradient-to-r from-gray-900 to-zinc-800 text-white font-kanit flex py-40 justify-center mx-auto px-24 " >
         <div data-aos="fade-up">
             <h1 className=" m-10 underline underline-offset-8 text-bold text-lg md:text-2xl text-bold">
               All Course
@@ -69,4 +69,4 @@ const allcourse = () => {
     )
   
 }
-export default allcourse;
+export default MainCourse;
