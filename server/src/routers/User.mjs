@@ -1,7 +1,7 @@
 import express from "express";
 import { register } from "../controller/User/register.mjs"
 import { login } from "../controller/User/login.mjs"
-import { updatePoint } from "../controller/User/updatePoint.mjs";}
+import { updatePoint } from "../controller/User/updatePoint.mjs";
 
 const router = express.Router(); 
 
