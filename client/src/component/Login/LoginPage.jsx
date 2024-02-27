@@ -13,6 +13,7 @@ const LoginPage = () => {
     lname: '',
     phonenumber: ''
   });
+  const navigate = useNavigate();
   const [message, setMessage] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -28,13 +29,18 @@ const LoginPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5050/api/user/login', formData);
-      setMessage('Login successful!');
-      setIsLoggedIn(true);
-      <Navigate to="/allcourse" replace={true} />
-      // Optionally, you can redirect the user to another page upon successful registration
-      // window.location.href = '/login';
-
+      await axios.post('http://localhost:5050/api/user/login', formData)
+        .then(response => {
+          const token = response.data.token
+          localStorage.setItem('token',JSON.stringify(token))
+          setMessage('Login successful!');
+          navigate("/allcourse");
+          setIsLoggedIn(true);
+    
+        })
+        .catch(error => {
+          console.error('Error fetching data:', error);
+      });
     } catch (error) {
       if (error.response) {
         setMessage(error.response.data.message || 'Login failed');

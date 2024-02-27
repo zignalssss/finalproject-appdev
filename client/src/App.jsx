@@ -6,6 +6,10 @@ import Allcourse from "./component/Allcourse/allcourse";
 import AddCourse from "./adminpage/addCourse";
 import LearningPath from "./component/learningPath/LearningPath";
 
+//protect frontend routes
+import PrivateRoutes from "./component/RouteProtected/PrivateRoute";
+import PublicRoutes from "./component/RouteProtected/PublicRoutes";
+
 export default function App() {
     return(
         <>
@@ -13,15 +17,14 @@ export default function App() {
                 <Route path="/" element={<Homepage/>}/>
                 <Route path="/signup" element={<Signup/>}/>
                 <Route path="/signin" element={<LoginPage/>}/>
-                <Route path="/allcourse" element={<Allcourse/>}/>
-                <Route path="/webpath" element={<LearningPath/>}/>
-                {/* <Route element={<PrivateRoutes />}>
-                   
-                </Route> */}
+                <Route element={<PrivateRoutes />}>
+                    <Route path="/allcourse" element={<Allcourse/>}/>
+                    <Route path="/webpath" element={<LearningPath/>}/>
+                </Route>
 
 
                 
-                <Route path="/admin/addcourse" element={<AddCourse/>}></Route>
+                {/* <Route path="/admin/addcourse" element={<AddCourse/>}></Route> */}
             </Routes>
         </>
     )

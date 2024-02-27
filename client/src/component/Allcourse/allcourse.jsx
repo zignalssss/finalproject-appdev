@@ -54,7 +54,7 @@ const allcourse = () => {
   const courses = [course_1, course_2, course_3,course_4, course_5, course_6,course_1, course_2, course_3];
   
     return (
-      <div className=" bg-homepage-img-1 h-auto bg-no-repeat bg-cover bg-fixed text-white font-kanit flex py-40 justify-center mx-auto px-24 " >
+      <div className=" bg-homepage-img-1 h-screen bg-no-repeat bg-cover bg-fixed text-white font-kanit flex py-40 justify-center mx-auto px-24 " >
         <div data-aos="fade-up">
           <div className="m-10 " >
             <h1 className="underline underline-offset-8 text-bold text-lg md:text-2xl text-bold">
