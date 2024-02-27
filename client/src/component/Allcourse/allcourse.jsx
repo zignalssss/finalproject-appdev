@@ -34,27 +34,27 @@ const allcourse = () => {
     altname: "database",
     courseName: "Databases Systems",
     pg: "เป็นการศึกษาโครงสร้างข้อมูลแบบพิเศษที่ใช้สำหรับเก็บ จัดการ และเรียกใช้ข้อมูล ",
-    img: "https://cdn.discordapp.com/attachments/1199804981310652577/1204827769666674729/Database.jpg?ex=65d6264c&is=65c3b14c&hm=62703539fea5f7a68bbcad37b3e425ea2fb4f94b04379fbdc072775799075fbd&",
+    img: "https://cdn.discordapp.com/attachments/928273696588726312/1212110490688430170/63044.jpg?ex=65f0a4dc&is=65de2fdc&hm=5c02c85d005b566cd948f76c29087d0f70ab1889c78cda3707d683d7da13f0ec&",
     badge: "View"
   };
   const course_5 = {
     altname: "appdev",
-    courseName: "application development ",
+    courseName: "Application Development ",
     pg: "เป็นการศึกษาการสร้างโปรแกรมคอมพิวเตอร์หรือชุดโปรแกรมเพื่อทำงานต่างๆ ที่ธุรกิจต้องการ ",
-    img: "https://cdn.discordapp.com/attachments/1199804981310652577/1204827768605380738/App_Dev.jpg?ex=65d6264c&is=65c3b14c&hm=6563f2f3240134bcf790b444b6f25bb9309bac3231481faefc8bbb8d5d7dbd67&",
+    img: "https://cdn.discordapp.com/attachments/928273696588726312/1212110469876158515/63042.jpg?ex=65f0a4d7&is=65de2fd7&hm=27a39762e93f756fb80bdb350001765b6a4847387178c57980d6ad92cc905ca9&",
     badge: "View"
   };
   const course_6 = {
     altname: "datacom",
     courseName: "Data Communication",
     pg: "เป็นการศึกษาความรู้กระบวนการถ่ายโอนหรือแลกเปลี่ยนข้อมูลกันระหว่างผู้ส่งและผู้รับ ",
-    img: "https://cdn.discordapp.com/attachments/1199804981310652577/1204827769209622618/Data_Com.jpg?ex=65d6264c&is=65c3b14c&hm=58fa9ea6cf152ad8bfc571e979e8dcddd67927aad003418286ea1639956d3f64&",
+    img: "https://cdn.discordapp.com/attachments/928273696588726312/1212110481104576592/63043.jpg?ex=65f0a4da&is=65de2fda&hm=6e71398048bdcd7a3eb8d45ab82d2d73eb6876ede4fc0609dda25b31fa2d2760&",
     badge: "View"
   };
   const courses = [course_1, course_2, course_3,course_4, course_5, course_6,course_1, course_2, course_3];
   
     return (
-      <div className=" bg-homepage-img-1 h-screen bg-no-repeat bg-cover bg-fixed text-white font-kanit flex py-40 justify-center mx-auto px-24 " >
+      <div className="  h-fulll h-screen bg-no-repeat bg-cover bg-homepage-img-1 text-white font-kanit flex py-40 justify-center mx-auto px-24 " >
         <div data-aos="fade-up">
           <div className="m-10 " >
             <h1 className="underline underline-offset-8 text-bold text-lg md:text-2xl text-bold">

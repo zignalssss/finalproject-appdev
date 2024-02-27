@@ -8,7 +8,6 @@ import LearningPath from "./component/learningPath/LearningPath";
 
 //protect frontend routes
 import PrivateRoutes from "./component/RouteProtected/PrivateRoute";
-import PublicRoutes from "./component/RouteProtected/PublicRoutes";
 
 export default function App() {
     return(
