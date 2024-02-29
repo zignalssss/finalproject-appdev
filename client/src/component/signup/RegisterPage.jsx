@@ -1,8 +1,12 @@
+
 import Tilt from 'react-parallax-tilt'
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const RegisterPage = () => {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     username: '',
     password: '',
@@ -12,7 +16,8 @@ const RegisterPage = () => {
     phonenumber: ''
   });
   const [message, setMessage] = useState('');
-
+  const [status,setStatus] = useState(false);
+  
   //Set data from user input to fromData variable
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -26,15 +31,16 @@ const RegisterPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5050/api/user/register', formData);
-      setMessage('Registration successful!');
+      await axios.post('http://localhost:5050/api/user/register', formData)
+          .then( response =>{
+            setMessage('Registration successful!');
+            navigate("/signin");
+          })
       // Optionally, you can redirect the user to another page upon successful registration
       // window.location.href = '/login';
     } catch (error) {
       if (error.response) {
         setMessage(error.response.data.message || 'Registration failed');
-      } else {
-        setMessage('Registration failed');
       }
     }
   };
@@ -74,7 +80,6 @@ const RegisterPage = () => {
           </div>
         </form>
       </Tilt>
-
       <div className='text-white'>
         {message && <p>{message}</p>}
       </div>

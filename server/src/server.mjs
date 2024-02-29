@@ -3,7 +3,9 @@ import { MongoClient } from 'mongodb';
 import dotenv from 'dotenv';
 import cors from "cors";
 import UserRouter from "./routers/User.mjs";
-
+import AddCourse from "./routers/Course.mjs";
+import cookieParser from "cookie-parser";
+import bodyParser from 'body-parser';
 dotenv.config();
 
 
@@ -11,6 +13,8 @@ const PORT = process.env.PORT;
 const URI = process.env.MONGO_CLIENT_URI;
 const app = express();
 
+app.use(bodyParser.json())
+app.use(cookieParser())
 app.use(express.json());
 app.use(
     cors({
@@ -21,7 +25,7 @@ app.use(
 
 export const client = new MongoClient(URI)
 export const db_name = "enrollDatabase"
-export const SECRET = process.env.PORT;
+export const SECRET = process.env.SECRET;
 
 
 app.get("/",(req,res) =>{
@@ -29,6 +33,7 @@ app.get("/",(req,res) =>{
 })
 
 app.use("/api/user",UserRouter);
+app.use("/api/course",AddCourse)
 
 app.listen(PORT,()=>{
     console.log(`server is Running on http://localhost:${PORT}`);
