@@ -41,8 +41,6 @@ const RegisterPage = () => {
     } catch (error) {
       if (error.response) {
         setMessage(error.response.data.message || 'Registration failed');
-      } else {
-        setMessage('Registration failed');
       }
     }
   };

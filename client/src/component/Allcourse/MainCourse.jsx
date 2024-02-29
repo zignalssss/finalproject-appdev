@@ -1,32 +1,27 @@
 import { useState,useEffect } from "react";
+import { axiosInstance } from "../../lib/axios";
 import AfterNav from "../Navbar/afternavbar";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Card from "../course/course"
-import axios from "axios";
 const MainCourse = () => {
-  const cookie = localStorage.getItem('token');
+  const [userInfo,setUserInfo] = useState([])
 
-  useEffect(() => {
-    axios.post('/verifyCookie', { cookie })
-      .then(response => {
-          // Step 3: Verify cookie on the backend
-          const data = response.data;
-          if (data.success) {
-            // Step 4: Retrieve user payload from the database
-            axios.get(`/getUserData?userId=${data._id}`)
-              .then(response => {
-                // Use userData retrieved from the database
-                console.log(response.data);
-              })
-              .catch(error => console.error('Error fetching user data:', error));
-          } else {
-            console.error('Cookie verification failed');
-          }
+  const getUser = async()=>{
+    try{
+      axiosInstance.get("/api/user/verify")
+        .then(response =>{
+          setUserInfo(response);
         })
-  .catch(error => console.error('Error verifying cookie:', error));
+    }catch(e){
+      console.log(e);
+    }
+  }
+  useEffect(() => {
+    getUser();
     AOS.init({ duration: 500 });
   }, []);
+  console.log(userInfo);
   const course_1 = {
     altname: "algorithm",
     courseName: "Algorithm Design And Analysis",
@@ -74,7 +69,7 @@ const MainCourse = () => {
   
     return (
       <>
-         <AfterNav/>
+         <AfterNav userObj = {userInfo} />
          <div className=" bg-gradient-to-r from-gray-900 to-zinc-800 text-white font-kanit flex py-40 justify-center mx-auto px-24 " >
         <div data-aos="fade-up">
             <h1 className=" m-10 underline underline-offset-8 text-bold text-lg md:text-2xl text-bold">

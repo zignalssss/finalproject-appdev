@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-export default function AfterNav(){
+export default function AfterNav({userObj}){
+    const name = `${userObj.data.fname} ${userObj.data.lname}`
     useEffect(() =>{
         AOS.init({duration: 500})
     },[]);
@@ -28,7 +29,7 @@ export default function AfterNav(){
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Button</a>
+               <span>{name}</span>
             </div>
       </div>
     )

@@ -1,6 +1,6 @@
 import Tilt from 'react-parallax-tilt'
 import {useState ,useEffect} from 'react';
-import axios from 'axios';
+import { axiosInstance } from '../../lib/axios';
 import { useNavigate } from 'react-router-dom';
 import ButtonLink from '../buttonLink/ButtonLink';
 
@@ -15,7 +15,6 @@ const LoginPage = () => {
   });
   const navigate = useNavigate();
   const [message, setMessage] = useState('');
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   //Set data from user input to fromData variable
   const handleChange = (e) => {
@@ -29,14 +28,12 @@ const LoginPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5050/api/user/login', formData)
+      await axiosInstance.post('/api/user/login', formData)
         .then(response => {
-          const token = response.data.token
-          localStorage.setItem('token',JSON.stringify(token))
+          const token = "welcome!"
+          localStorage.setItem('IsLog',JSON.stringify(token))
           setMessage('Login successful!');
           navigate("/allcourse");
-          setIsLoggedIn(true);
-    
         })
         .catch(error => {
           console.error('Error fetching data:', error);

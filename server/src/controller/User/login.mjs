@@ -22,7 +22,6 @@ export const login = async(req,res) => {
         const token = jwt.sign(payload,SECRET, { expiresIn: '1h' });
         res.cookie('token',token ,{ httpOnly:true });
         res.status(200).json({message:"login successfuly"});
-        console.log("login successfuly");
     }catch(e){
         console.log(e);
     }
