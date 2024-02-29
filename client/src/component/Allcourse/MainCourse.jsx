@@ -5,14 +5,26 @@ import "aos/dist/aos.css";
 import Card from "../course/course"
 import axios from "axios";
 const MainCourse = () => {
+  const cookie = localStorage.getItem('token');
+
   useEffect(() => {
-    axios.get("http://localhost:5050/api/user/verify",{ withCredentials: true })
-        .then(response => {
-          console.log(response.data);
+    axios.post('/verifyCookie', { cookie })
+      .then(response => {
+          // Step 3: Verify cookie on the backend
+          const data = response.data;
+          if (data.success) {
+            // Step 4: Retrieve user payload from the database
+            axios.get(`/getUserData?userId=${data._id}`)
+              .then(response => {
+                // Use userData retrieved from the database
+                console.log(response.data);
+              })
+              .catch(error => console.error('Error fetching user data:', error));
+          } else {
+            console.error('Cookie verification failed');
+          }
         })
-        .catch(error => {
-          console.error('Error:', error);
-        });
+  .catch(error => console.error('Error verifying cookie:', error));
     AOS.init({ duration: 500 });
   }, []);
   const course_1 = {
