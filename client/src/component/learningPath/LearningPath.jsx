@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect ,useState} from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import AfterNav from "../Navbar/afternavbar";
@@ -11,15 +11,37 @@ import { DiMongodb } from "react-icons/di";
 import { SiMysql } from "react-icons/si";
 import { SiExpress } from "react-icons/si";
 import { SiPostman } from "react-icons/si";
-import Navbar from "../Navbar/navbar"
+import { axiosInstance } from "../../lib/axios";
+import LoadingSpinner from "../Loading/LoadingSpinner";
+
 
 const LearningPath = () => {
-    useEffect(() => {
+    const [userInfo,setUserInfo] = useState([])
+    const [loading, setLoading] = useState(true);
+
+    const getUser = async()=>{
+        try{
+          await axiosInstance.get("/api/user/verify")
+            .then(response =>{
+              setUserInfo(response)
+              setLoading(false);;
+            })
+        }catch(e){
+          console.log(e);
+        }
+      }
+      useEffect(() => {
+        getUser();
         AOS.init({ duration: 500 });
       }, []);
+
+      if (loading) {
+        return <LoadingSpinner />; 
+      }
+
     return(
         <>
-            <AfterNav/>
+            <AfterNav userObj={userInfo} />
             <div className=" bg-gradient-to-r from-gray-900 to-zinc-800 flex flex-col justify-center items-center text-white font-kanit" data-aos="fade-up">
                 <h1 className="underline underline-offset-8 text-bold text-lg md:text-2xl text-bold m-5">
                     Web Development

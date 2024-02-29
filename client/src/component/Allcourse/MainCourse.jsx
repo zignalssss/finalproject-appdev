@@ -1,18 +1,20 @@
 import { useState,useEffect } from "react";
 import { axiosInstance } from "../../lib/axios";
 import AfterNav from "../Navbar/afternavbar";
+import LoadingSpinner from "../Loading/LoadingSpinner";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Card from "../course/course"
 const MainCourse = () => {
   const [userInfo,setUserInfo] = useState([])
+  const [loading, setLoading] = useState(true);
 
   const getUser = async()=>{
     try{
-      axiosInstance.get("/api/user/verify")
-        .then(response =>{
-          setUserInfo(response);
-        })
+      const response = await axiosInstance.get("/api/user/verify")
+      setUserInfo(response.data);
+      setLoading(false);
+        
     }catch(e){
       console.log(e);
     }
@@ -21,7 +23,6 @@ const MainCourse = () => {
     getUser();
     AOS.init({ duration: 500 });
   }, []);
-  console.log(userInfo);
   const course_1 = {
     altname: "algorithm",
     courseName: "Algorithm Design And Analysis",
@@ -67,9 +68,13 @@ const MainCourse = () => {
   };
   const courses = [course_1, course_2, course_3,course_4, course_5, course_6,course_1, course_2, course_3];
   
+    if (loading) {
+      return <LoadingSpinner />; 
+    }
+
     return (
       <>
-         <AfterNav userObj = {userInfo} />
+         <AfterNav userObj={userInfo} />
          <div className=" bg-gradient-to-r from-gray-900 to-zinc-800 text-white font-kanit flex py-40 justify-center mx-auto px-24 " >
         <div data-aos="fade-up">
             <h1 className=" m-10 underline underline-offset-8 text-bold text-lg md:text-2xl text-bold">

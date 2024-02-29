@@ -5,7 +5,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 export default function AfterNav({userObj}){
-    const name = `${userObj.data.fname} ${userObj.data.lname}`
+    const name = `${userObj.fname} ${userObj.lname}`
     useEffect(() =>{
         AOS.init({duration: 500})
     },[]);
