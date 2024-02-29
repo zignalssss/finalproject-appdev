@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import AfterNav from "../Navbar/afternavbar";
 import { FaHtml5 } from "react-icons/fa";
 import { FaCss3Alt } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
@@ -18,8 +19,8 @@ const LearningPath = () => {
       }, []);
     return(
         <>
-            <Navbar/>
-            <div className=" bg-cover bg-fixed bg-neutral-950 flex flex-col justify-center items-center text-white font-kanit" data-aos="fade-up">
+            <AfterNav/>
+            <div className=" bg-gradient-to-r from-gray-900 to-zinc-800 flex flex-col justify-center items-center text-white font-kanit" data-aos="fade-up">
                 <h1 className="underline underline-offset-8 text-bold text-lg md:text-2xl text-bold m-5">
                     Web Development
                 </h1>

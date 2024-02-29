@@ -2,8 +2,11 @@
 import Tilt from 'react-parallax-tilt'
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const RegisterPage = () => {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     username: '',
     password: '',
@@ -28,8 +31,11 @@ const RegisterPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5050/api/user/register', formData);
-      setMessage('Registration successful!');
+      await axios.post('http://localhost:5050/api/user/register', formData)
+          .then( response =>{
+            setMessage('Registration successful!');
+            navigate("/signin");
+          })
       // Optionally, you can redirect the user to another page upon successful registration
       // window.location.href = '/login';
     } catch (error) {

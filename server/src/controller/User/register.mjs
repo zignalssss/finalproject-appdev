@@ -14,6 +14,10 @@ export const register = async(req,res) =>{
                     phonenumber
                 }
         await client.connect()
+        const finduser =  await client.db(db_name).collection("userData").findOne(username);
+        if(finduser){
+            return res.status(404).json({ error: 'already User' });
+        }
         await client.db(db_name).collection("userData").insertOne(data);
         res.status(200).send(data);
     }catch(e){

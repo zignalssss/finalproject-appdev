@@ -4,7 +4,8 @@ import dotenv from 'dotenv';
 import cors from "cors";
 import UserRouter from "./routers/User.mjs";
 import AddCourse from "./routers/Course.mjs";
-
+import cookieParser from "cookie-parser";
+import bodyParser from 'body-parser';
 dotenv.config();
 
 
@@ -12,6 +13,8 @@ const PORT = process.env.PORT;
 const URI = process.env.MONGO_CLIENT_URI;
 const app = express();
 
+app.use(bodyParser.json())
+app.use(cookieParser())
 app.use(express.json());
 app.use(
     cors({

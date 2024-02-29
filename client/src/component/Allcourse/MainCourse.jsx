@@ -3,9 +3,16 @@ import AfterNav from "../Navbar/afternavbar";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Card from "../course/course"
+import axios from "axios";
 const MainCourse = () => {
   useEffect(() => {
-   
+    axios.get("http://localhost:5050/api/user/verify",{ withCredentials: true })
+        .then(response => {
+          console.log(response.data);
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
     AOS.init({ duration: 500 });
   }, []);
   const course_1 = {
