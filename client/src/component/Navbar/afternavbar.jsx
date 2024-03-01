@@ -32,8 +32,8 @@ export default function AfterNav({userObj}){
                         <details>
                             <summary>Learning Path</summary>
                             <ul className="p-2">
-                            <li><Link to="/webpath">Web Application</Link></li>
-                            <li><a>Problem Solving</a></li>
+                            <li><Link to="/webpath">Web Dev</Link></li>
+                            <li><a>Algorithm</a></li>
                             </ul>
                         </details>
                     </li>

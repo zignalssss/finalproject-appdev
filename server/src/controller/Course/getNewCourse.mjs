@@ -1,6 +1,6 @@
 import { client, db_name } from '../../server.mjs';
 
-export const getCourse = async (req, res) => {
+export const getNewCourse = async (req, res) => {
     try {
         await client.connect();
 
