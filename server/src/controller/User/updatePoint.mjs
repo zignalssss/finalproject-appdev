@@ -1,9 +1,13 @@
+import { client , db_name} from '../../server.mjs';
+
 export const updatePoint = async(req,res) => {
-    const itemId = req.params.id;
+    const userId = req.body._id;
     const updatedPoint = req.body.point;
     await client.connect()
+    const findUser = await client.db(db_name).collection("userData").findOne({_id:userId});
+    updatePoint -= findUser.point;
     await client.db(db_name).collection("userData").updateOne(
-        { _id: itemId },
+        { _id: userId },
         { $set: { point: updatedPoint } },
         (err, result) => {
             if (err) {
