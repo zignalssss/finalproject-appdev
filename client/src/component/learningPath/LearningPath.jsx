@@ -38,10 +38,9 @@ const LearningPath = () => {
       if (loading) {
         return <LoadingSpinner />; 
       }
-
     return(
         <>
-            <AfterNav userObj={userInfo} />
+            <AfterNav userObj={userInfo.data} />
             <div className=" bg-gradient-to-r from-gray-900 to-zinc-800 flex flex-col justify-center items-center text-white font-kanit" data-aos="fade-up">
                 <h1 className="underline underline-offset-8 text-bold text-lg md:text-2xl text-bold m-5">
                     Web Development
