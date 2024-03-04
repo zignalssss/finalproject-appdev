@@ -9,7 +9,7 @@ const router = express.Router();
 
 
 router.get("/verify",verifyToken);
-router.post("logout",logout);
+router.post("/logout",logout);
 router.post("/register",register);
 router.post("/login",login);
 router.post("/adduserCourse",UserCourse)
