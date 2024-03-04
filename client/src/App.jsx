@@ -15,11 +15,14 @@ export default function App() {
                 <Route path="/" element={<Homepage/>}/>
                 <Route path="/signup" element={<Signup/>}/>
                 <Route path="/signin" element={<LoginPage/>}/>
+                
+                <Route path="/setting" element={<SettingPage/>}/>
+
                 {/* <Route path="/load" element={<LoadingSpinner/>}/> */}
                 <Route element={<PrivateRoutes />}>
                     <Route path="/allcourse" element={<MainCourse/>}/>
                     <Route path="/webpath" element={<LearningPath/>}/>
-                    <Route path="/setting" element={<SettingPage/>}/>
+                    {/* <Route path="/setting" element={<SettingPage/>}/> */}
                 </Route>
 
             </Routes>
