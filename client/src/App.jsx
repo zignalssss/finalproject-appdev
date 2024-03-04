@@ -3,7 +3,7 @@ import Homepage from "./component/Homepage/Homepage";
 import Signup from "./component/signup/RegisterPage"
 import LoginPage from "./component/Login/LoginPage";
 import LearningPath from "./component/learningPath/LearningPath";
-import LoadingSpinner from "./component/Loading/LoadingSpinner";
+import SettingPage from "./component/SettingPage/SettingPage";
 import MainCourse from "./component/Allcourse/MainCourse"
 //protect frontend routes
 import PrivateRoutes from "./component/RouteProtected/PrivateRoute";
@@ -19,6 +19,7 @@ export default function App() {
                 <Route element={<PrivateRoutes />}>
                     <Route path="/allcourse" element={<MainCourse/>}/>
                     <Route path="/webpath" element={<LearningPath/>}/>
+                    <Route path="/setting" element={<SettingPage/>}/>
                 </Route>
 
             </Routes>
