@@ -75,12 +75,12 @@ const MainCourse = () => {
     return (
       <>
          <AfterNav userObj={userInfo} />
-         <div className=" bg-gradient-to-r from-gray-900 to-zinc-800 text-white font-kanit flex py-40 justify-center mx-auto px-24 " >
+         <div className=" bg-gradient-to-t from-stone-950 via-gray-800 from-80% to-gray-800 text-white font-kanit flex py-40 justify-center mx-auto px-24 " >
         <div data-aos="fade-up">
-            <h1 className=" m-10 underline underline-offset-8 text-bold text-lg md:text-2xl text-bold">
+            <h1 className="m-10 underline underline-offset-8 text-bold text-lg md:text-2xl text-bold">
               All Course
             </h1>                   
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {courses.map((course, index) => (
               <Card key={index} {...course} />
             ))}
