@@ -18,6 +18,7 @@ export default function AfterNav({userObj}){
     const isClick = async() =>{
         await axiosInstance.post("/api/user/logout")
         .then( response => {
+            localStorage.removeItem('IsLog');
             navigate("/");
         })
     }
