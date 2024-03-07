@@ -5,7 +5,6 @@ export const updatePoint = async (req, res) => {
     try {
         await client.connect();
         const findUser = await client.db(db_name).collection("userData").findOne({ _id: _id });
-        console.log(_id)
         if (!findUser) {
             res.status(401).json({ message: "User not found" });
             console.log("User not found");
