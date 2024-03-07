@@ -3,7 +3,7 @@ import Tilt from 'react-parallax-tilt'
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-
+import ButtonLink from '../buttonLink/ButtonLink';
 const RegisterPage = () => {
   const navigate = useNavigate();
 
@@ -47,7 +47,7 @@ const RegisterPage = () => {
 
   return (
 
-    <div className='flex w-screen h-screen bg-cover bg-login_img1 text-white bg-no-repeat justify-center items-center flex-col'>
+    <div className='flex w-screen h-screen bg-cover bg-login_imge text-white bg-no-repeat justify-center items-center flex-col'>
       <Tilt>
         <form onSubmit={handleSubmit} className="bg-slate-700 p-12 rounded-3xl bg-opacity-60 shadow-5xl border-white border-t-2 border-l-2 border-opacity-20 backdrop-filter backdrop-blur-sm">
         <h2 className="text-4xl font-semibold">Register</h2>
@@ -72,12 +72,18 @@ const RegisterPage = () => {
             <input type="text" id="lname" name="lname" value={formData.lname} onChange={handleChange} className='w-full rounded-lg bg-slate-800 p-2 mt-1'/>
           </div>
           <div className='mt-1'>
-            <label htmlFor="phonenumber" className="font-medium text-ls">phonenumber</label>
+            <label htmlFor="phonenumber" className="font-medium text-ls">Phone</label>
             <input type="text" id="phonenumber" name="phonenumber" value={formData.phonenumber} onChange={handleChange} className='w-full rounded-lg bg-slate-800 p-2 mt-1'/>
           </div >
           <div className="gep-y-4 text-center mt-4">
             <button className= 'btn bg-sky-600 rounded-lg w-32 active:scale-[.98] active:duration-75 transition-al' type="submit" >submit</button>
           </div>
+          <div className="mt-5 text-sm first-line: active:scale-[.98] active:duration-75 transition-all text-center">
+                    <ButtonLink tailwind="font-medium"to="/signin">
+                          <span className='text-gray-200 mr-1'>have account</span>
+                          <span className='underline underline-offset-2 font-bold'> Sign In</span>
+                    </ButtonLink>
+            </div>
         </form>
       </Tilt>
       <div className='text-white'>

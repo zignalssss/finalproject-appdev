@@ -47,7 +47,7 @@ const LoginPage = () => {
     }
   };
     return (
-      <div className='flex w-screen h-screen bg-cover bg-login_img1 text-white bg-no-repeat justify-center items-center flex-col'>
+      <div className='flex w-screen h-screen bg-cover bg-login_imge text-white bg-no-repeat justify-center items-center flex-col'>
         <Tilt>
           <form onSubmit={handleSubmit} className="bg-slate-700 p-12 rounded-3xl bg-opacity-60 shadow-5xl border-white border-t-2 border-l-2 border-opacity-20 backdrop-filter backdrop-blur-sm">
           <h2 className="text-4xl font-semibold">Login</h2>
@@ -63,11 +63,12 @@ const LoginPage = () => {
               <button className= 'btn bg-sky-600 rounded-lg w-32 active:scale-[.98] active:duration-75 transition-al' type="submit">Login</button>
               
             </div>
-              <div className="mt-3 text-sm first-line: active:scale-[.98] active:duration-75 transition-all text-center">
+            <div className="mt-5 text-sm first-line: active:scale-[.98] active:duration-75 transition-all text-center">
                     <ButtonLink tailwind="font-medium"to="/signup">
-                          No account Sign up
+                          <span className='text-gray-200 mr-1'>no account</span>
+                          <span className='underline underline-offset-2 font-bold'> Sign Up</span>
                     </ButtonLink>
-              </div>
+            </div>
           </form>
         </Tilt>
         <div className='text-white'>
