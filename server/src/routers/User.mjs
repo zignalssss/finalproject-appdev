@@ -13,8 +13,8 @@ router.get("/verify",verifyToken);
 router.post("/logout",logout);
 router.post("/register",register);
 router.post("/login",login);
-router.put("/adduserCourse",UserCourse)
-router.put("/updatepoint",updatePoint)
-router.put("/addpoint",addPoint)
+router.post("/adduserCourse",UserCourse)
+router.post("/updatepoint",updatePoint)
+router.post("/addpoint",addPoint)
 
 export default router;

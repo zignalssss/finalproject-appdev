@@ -49,9 +49,10 @@ const MainCourse = () => {
                   pg={course.pg}
                   img={course.thumbnail_cover}
                   badge={course.badge}
-                  point = {course.point_enroll}
+                  point_enroll = {course.point_enroll}
                   usercourse={userInfo.courses}
                   userpoint={userInfo.point}
+                  user_id={userInfo._id}
                 />
               ))}
             </div>
