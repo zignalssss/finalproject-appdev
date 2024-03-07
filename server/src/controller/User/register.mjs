@@ -12,7 +12,8 @@ export const register = async(req,res) =>{
                     fname,
                     lname,
                     phonenumber,
-                    point:100
+                    point:100,
+                    courseuser:[]
                 }
         await client.connect()
         await client.db(db_name).collection("userData").insertOne(data);
