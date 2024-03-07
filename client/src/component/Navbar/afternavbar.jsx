@@ -25,10 +25,7 @@ export default function AfterNav({userObj}){
         <div className="bg-[#18181b] sticky top-0 z-[10]">
             <div className="navbar bg-base-100 text-white ">
                 <div className="navbar-start">
-                {/* <div class="ms-52 my-10 text-5xl font-extrabold">
-                        <span class="animate-pulse bg-gradient-to-r from-pink-500 via-green-500 to-violet-500 bg-clip-text text-transparent text-xl"> Tailwind CSS Animation </span>
-                </div> */}
-                    <h1 className="ml-3 font-bold text-white drop-shadow-[0_0_5px_rgba(255,255,255,0.5)] hover:drop-shadow-[0_0_20px_rgba(255,255,255,1)] transition-all duration-200">
+                    <h1 className="ml-3 font-bold text-white drop-shadow-[0_0_5px_linear-gradient( to right, pink-500 , via-red-400,violet-500)] hover:drop-shadow-[0_0_20px_rgba(255,255,255,1)] transition-all duration-200">
                         <span className="bg-gradient-to-r from-pink-500 via-red-400 to-violet-500 bg-clip-text text-transparent text-xl hover:text-white transition-all duration-300"><Link to="/allcourse">Next Future</Link></span>
                     </h1>
                 </div>
