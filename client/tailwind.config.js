@@ -14,8 +14,8 @@ export default {
         'homepage-img-1': "url('src/assets/img/bg_img3.jpg')",
         'homepage-img-2': "url('src/assets/img/bg_img1.jpg')",
         'homepage-img-3': "url('src/assets/img/bg_img2.jpg')",
-        'login_img1':"url('src/assets/img/BG_image_blur.jpg')",
-        'login_imge':"url('src/assets/img/BG_image.jpg')",
+        'login_img1':"url('src/assets/img/BG-img-log-reg.png')",
+        'login_imge':"url('src/assets/img/BG-img10.jpg')",
       },
       fontFamily:{
           inter :["Inter", "sans-serif"],
