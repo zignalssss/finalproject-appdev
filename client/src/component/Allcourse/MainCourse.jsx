@@ -14,7 +14,6 @@ const MainCourse = () => {
     try{
       const response = await axiosInstance.get("/api/user/verify")
       const datacourse = await axiosInstance.get("api/course/getallcourse")
-      console.log(datacourse.data)
       setCoursedata(datacourse.data)
       setUserInfo(response.data);
       setLoading(false);
@@ -50,7 +49,9 @@ const MainCourse = () => {
                   pg={course.pg}
                   img={course.thumbnail_cover}
                   badge={course.badge}
-                  point = {course.point}
+                  point = {course.point_enroll}
+                  usercourse={userInfo.courses}
+                  userpoint={userInfo.point}
                 />
               ))}
             </div>
