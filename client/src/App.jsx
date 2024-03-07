@@ -1,5 +1,5 @@
 import { Route,Routes } from "react-router-dom";
-import Homepage from "./component/Homepage/Homepage";
+import Homepage from "./component/Homepage/homepage";
 import Signup from "./component/signup/RegisterPage"
 import LoginPage from "./component/Login/LoginPage";
 import LearningPath from "./component/learningPath/LearningPath";
