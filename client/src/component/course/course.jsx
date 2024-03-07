@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { axiosInstance } from "../../lib/axios";
+import { useNavigate } from "react-router-dom";
 
 export default function Card({course_id,altname, courseName, pg, img,point}) {
+    const navigate = useNavigate();
     const IsClick = () =>{
 
     }
