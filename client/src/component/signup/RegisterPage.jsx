@@ -32,18 +32,22 @@ const RegisterPage = () => {
     e.preventDefault();
     try {
       await axios.post('http://localhost:5050/api/user/register', formData)
-          .then( response =>{
+          .then(response => {
             setMessage('Registration successful!');
             navigate("/signin");
           })
-      // Optionally, you can redirect the user to another page upon successful registration
-      // window.location.href = '/login';
+          .catch(error => {
+            if (error.response && error.response.status === 409) {
+              setMessage('Username is already in use. Please choose a different one.');
+            } else {
+              setMessage(error.response.data.message || 'Registration failed');
+            }
+          });
     } catch (error) {
-      if (error.response) {
-        setMessage(error.response.data.message || 'Registration failed');
-      }
+      setMessage(error.response.data.message || 'Registration failed');
     }
   };
+  
 
   return (
 
@@ -86,9 +90,9 @@ const RegisterPage = () => {
             </div>
         </form>
       </Tilt>
-      <div className='text-white'>
+      <div className='mt-10 text-white'>
         {message && <p>{message}</p>}
-      </div>
+        </div>
     </div>
   );
 };
