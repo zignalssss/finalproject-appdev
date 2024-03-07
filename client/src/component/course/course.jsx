@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Link } from "react-router-dom";
 import { axiosInstance } from "../../lib/axios";
 import { useNavigate } from "react-router-dom";
 
@@ -11,7 +11,6 @@ export default function Card({ course_id, altname, courseName, pg, img, point_en
     const handleViewClick = () => {
         navigate(`/video/${course_id}`);
     };
-
     const handleEnrollClick = async () => {
         if (userpoint >= point_enroll) {
             const Point_Update = {
@@ -36,6 +35,9 @@ export default function Card({ course_id, altname, courseName, pg, img, point_en
         }
     };
 
+    const handleCloseModal = () => {
+        window.location.reload();
+    };
     return (
         <div className="card bg-[#2d313b] text-wihte  shadow-xl shadow-zinc-700 mx-auto max-w-md">
             <figure>
@@ -58,7 +60,7 @@ export default function Card({ course_id, altname, courseName, pg, img, point_en
                                     <div className="modal-action">
                                         <form method="dialog">
                                             {/* if there is a button in form, it will close the modal */}
-                                            <button className="btn">Close</button>
+                                            <button className="btn" onClick={handleCloseModal}>Close</button>
                                         </form>
                                     </div>
                                 </div>
