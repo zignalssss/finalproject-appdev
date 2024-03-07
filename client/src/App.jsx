@@ -7,6 +7,7 @@ import LoadingSpinner from "./component/Loading/LoadingSpinner";
 import MainCourse from "./component/Allcourse/MainCourse"
 //protect frontend routes
 import PrivateRoutes from "./component/RouteProtected/PrivateRoute";
+import Quizpage from "./component/Quizpage/quizpage";
 
 export default function App() {
     return(
@@ -15,6 +16,7 @@ export default function App() {
                 <Route path="/" element={<Homepage/>}/>
                 <Route path="/signup" element={<Signup/>}/>
                 <Route path="/signin" element={<LoginPage/>}/>
+                <Route path="/quiz" element={<Quizpage/>}/>
                 {/* <Route path="/load" element={<LoadingSpinner/>}/> */}
                 <Route element={<PrivateRoutes />}>
                     <Route path="/allcourse" element={<MainCourse/>}/>
