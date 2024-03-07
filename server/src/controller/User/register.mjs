@@ -13,7 +13,7 @@ export const register = async(req,res) =>{
                     lname,
                     phonenumber,
                     point:100,
-                    courseuser:[]
+                    courses:[]
                 }
         await client.connect()
         await client.db(db_name).collection("userData").insertOne(data);
