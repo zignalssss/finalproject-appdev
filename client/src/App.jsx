@@ -16,7 +16,6 @@ export default function App() {
                 <Route path="/" element={<Homepage/>}/>
                 <Route path="/signup" element={<Signup/>}/>
                 <Route path="/signin" element={<LoginPage/>}/>
-                
                 <Route path="/setting" element={<SettingPage/>}/>
 
                 {/* <Route path="/load" element={<LoadingSpinner/>}/> */}
@@ -24,7 +23,6 @@ export default function App() {
                     <Route path="/allcourse" element={<MainCourse/>}/>
                     <Route path="/webpath" element={<LearningPath/>}/>
                     <Route path="/video/:id" element={<MainVideoPage/>}/>
-                    {/* <Route path="/setting" element={<SettingPage/>}/> */}
                 </Route>
 
             </Routes>

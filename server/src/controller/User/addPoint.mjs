@@ -5,10 +5,11 @@ export const addPoint = async(req,res) => {
     const updatedPoint = req.body.point;
     await client.connect()
     const findUser = await client.db(db_name).collection("userData").findOne({_id:userId});
-    updatePoint += findUser.point;
+    const userpoint = findUser.point;
+    const newpoint = updatePoint + userpoint;
     await client.db(db_name).collection("userData").updateOne(
         { _id: userId },
-        { $set: { point: updatedPoint } },
+        { $set: { point: newpoint } },
         (err, result) => {
             if (err) {
                 console.error(err);
