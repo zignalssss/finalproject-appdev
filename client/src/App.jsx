@@ -5,6 +5,7 @@ import LoginPage from "./component/Login/LoginPage";
 import LearningPath from "./component/learningPath/LearningPath";
 import SettingPage from "./component/SettingPage/SettingPage";
 import MainCourse from "./component/Allcourse/MainCourse"
+import MainVideoPage from "./component/MainVideoPage/MainVideoPage";
 //protect frontend routes
 import PrivateRoutes from "./component/RouteProtected/PrivateRoute";
 
@@ -22,6 +23,7 @@ export default function App() {
                 <Route element={<PrivateRoutes />}>
                     <Route path="/allcourse" element={<MainCourse/>}/>
                     <Route path="/webpath" element={<LearningPath/>}/>
+                    <Route path="/video/:id" element={<MainVideoPage/>}/>
                     {/* <Route path="/setting" element={<SettingPage/>}/> */}
                 </Route>
 

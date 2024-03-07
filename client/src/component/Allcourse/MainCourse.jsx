@@ -44,11 +44,13 @@ const MainCourse = () => {
               {data.map((course, index) => (
                 <Card
                   key={index}
+                  course_id={course.course_id}
                   altname={course.altname}
                   courseName={course.courseName}
                   pg={course.pg}
                   img={course.thumbnail_cover}
                   badge={course.badge}
+                  point = {course.point}
                 />
               ))}
             </div>
