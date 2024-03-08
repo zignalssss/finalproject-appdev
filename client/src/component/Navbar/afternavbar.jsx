@@ -53,8 +53,8 @@ export default function AfterNav({userObj}){
                             </div>
                         </div>
                         <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-[#18181b] rounded-box w-52 ">
-                            <li><a onClick={isClick}>Logout</a></li>
                             <li><Link to="/setting">Setting</Link></li>
+                            <li><a onClick={isClick}>Logout</a></li>
                         </ul>
                     </div>
                 </div>

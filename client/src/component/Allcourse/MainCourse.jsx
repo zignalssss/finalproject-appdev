@@ -34,7 +34,7 @@ const MainCourse = () => {
     return (
       <>
         <AfterNav userObj={userInfo} />
-        <div className=" h-screen bg-gradient-to-t from-stone-950 via-gray-800 from-80% to-gray-800 text-white font-kanit flex py-40 justify-center mx-auto px-24">
+        <div className="bg-gradient-to-t from-stone-950 via-gray-800 from-80% to-gray-800 text-white font-kanit flex py-40 justify-center mx-auto px-24">
           <div data-aos="fade-up">
             <h1 className="m-10 underline underline-offset-8 text-bold text-lg md:text-2xl text-bold">
               All Course
