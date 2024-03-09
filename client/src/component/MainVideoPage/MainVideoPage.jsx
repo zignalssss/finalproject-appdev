@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import { axiosInstance } from "../../lib/axios";
 import AfterNav from "../Navbar/afternavbar";
 import LoadingSpinner from "../Loading/LoadingSpinner";
-import Videocard from "../course/videocard";
 
 const MainVideoPage = () => {
   const { id } = useParams();
@@ -67,8 +66,14 @@ const MainVideoPage = () => {
                         <div className="bg-zinc-800 pb-5 rounded-3xl overflow-y-auto max-w-[650px] max-h-[700px]">
                             <div className="mt-4 md:mt-">
                                 <div className="flex justify-center flex-col items-center gap-4">
-                                {subcoursevideo.map((video, index) => (
-                                    <Videocard key={index} video={video} />
+                                {subcoursename.map((video, index) => (
+                                  <div>     
+                                    <a href="#" className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                                        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                            Noteworthy technology acquisitions 2021
+                                        </h5>
+                                    </a>
+                                  </div>
                                 ))}
                                 </div>
                             </div>
