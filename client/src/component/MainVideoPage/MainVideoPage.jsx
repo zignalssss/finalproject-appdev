@@ -82,7 +82,12 @@ const MainVideoPage = () => {
                         </div>
                     </div>
                 </div>
-                 <div className="mt-4">{courseInfo.pg}</div>
+                  <h1 className="text-xl font-bold mt-10">
+                  {subcoursename[index]}
+                  </h1>
+                 <div className="mt-4">
+                  {courseInfo.pg}
+                 </div>
             </div>
         </div>
       </div>
