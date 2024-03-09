@@ -41,7 +41,7 @@ const LearningPath = () => {
     return(
         <>
             <AfterNav userObj={userInfo.data} />
-            <div className=" bg-gradient-to-r from-gray-900 to-zinc-800 flex flex-col justify-center items-center text-white font-kanit" >
+            <div className=" bg-gradient-to-t from-stone-950 via-gray-800 from-80% to-gray-800 flex flex-col justify-center items-center text-white font-kanit" >
                     <h1  data-aos="fade-down" className="underline underline-offset-8 text-bold text-lg md:text-2xl text-bold m-5">
                         Web Development
                     </h1>

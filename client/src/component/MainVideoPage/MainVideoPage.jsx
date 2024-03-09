@@ -66,7 +66,7 @@ const MainVideoPage = () => {
                             CONTENT
                         </h3>
                         <div className="bg-zinc-800 pb-5 rounded-3xl overflow-y-auto max-w-[650px] max-h-[600px]">
-                            <div className="mt-4 md:mt-2">
+                            <div className="mt-4 md:mt-4">
                                 <div className="flex justify-center flex-col items-center gap-1">
                                 {subcoursename.map((name, idx) => (
                                   <div key={idx} onClick={() => handleClick(idx)}>     
