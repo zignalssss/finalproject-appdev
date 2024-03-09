@@ -54,17 +54,17 @@ const MainVideoPage = () => {
                         url={
                         "https://www.youtube.com/watch?v=0X6tR7P6kZw&list=RD0X6tR7P6kZw&start_radio=1"
                         }
-                        height={500}
-                        width="100%"
+                        height={700}
+                        width={1300}
                         volume={0.1}
                     />
                     </div>
 
-                    <div>
+                    <div className="ml-[400px]">
                         <h3 className=" ml-[30px] text-xl font-kanit font-semibold underline underline-offset-8 mb-4">
                             CONTENT
                         </h3>
-                        <div className="bg-zinc-800 pb-5 rounded-3xl overflow-y-auto max-w-[650px] max-h-[500px]">
+                        <div className="bg-zinc-800 pb-5 rounded-3xl overflow-y-auto max-w-[650px] max-h-[700px]">
                             <div className="mt-4 md:mt-">
                                 <div className="flex justify-center flex-col items-center gap-4">
                                 {subcoursevideo.map((video, index) => (
