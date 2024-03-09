@@ -49,7 +49,10 @@ export default function Card({ course_id, altname, courseName, pg, img, point_en
                 <div className="card-actions justify-end mb-2">
                     {!isEnrolled ? (
                         <div>
-                            <button className="btn w-24 mr-4 bg-cyan-500 shadow-md shadow-cyan-500/50 border-none transition-all duration-200 hover:shadow-[0_0_10px_rgba(255,255,255,0.7)] hover:text-base/[5px]" onClick={handleEnrollClick}>
+                            <div className="font-bold ml-4">
+                                Point: {point_enroll}
+                            </div>
+                            <button className="btn w-24 mt-2 mr-4 bg-cyan-500 shadow-md shadow-cyan-500/50 border-none transition-all duration-200 hover:shadow-[0_0_10px_rgba(255,255,255,0.7)] hover:text-base/[5px]" onClick={handleEnrollClick}>
                                 <h3 className="text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.7)]">Enroll</h3>
                             </button>
                             {/* if ok to enroll */}
