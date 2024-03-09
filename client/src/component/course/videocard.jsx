@@ -1,16 +1,13 @@
  const Videocard = () =>{
     return(
         <div>
-            <div className="card w-96 bg-base-100 shadow-xl">
-            <div className="card-body">
-                <div className="card-actions justify-end">
-                <button className="btn btn-square btn-sm">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                </button>
-                </div>
-                <p>We are using cookies for no reason.</p>
-            </div>
-            </div>
+           
+            <a href="#" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
+            <p class="font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+            </a>
+
         </div>
     )
  };
