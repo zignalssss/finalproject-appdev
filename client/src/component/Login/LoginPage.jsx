@@ -65,7 +65,7 @@ const LoginPage = () => {
             </div>
             <div className="mt-5 text-sm first-line: active:scale-[.98] active:duration-75 transition-all text-center">
                     <ButtonLink tailwind="font-medium"to="/signup">
-                          <span className='text-gray-200 mr-1'>no account</span>
+                          <span className='text-gray-200 mr-1'>Don't have an account?</span>
                           <span className='underline underline-offset-2 font-bold'> Sign Up</span>
                     </ButtonLink>
             </div>
