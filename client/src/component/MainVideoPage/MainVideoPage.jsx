@@ -55,8 +55,8 @@ const MainVideoPage = () => {
                         <ReactPlayer
                             controls={true}
                             url={subcoursevideo[index]}
-                            height={700}
-                            width={1300}
+                            height={600}
+                            width={1200}
                             volume={0.1}
                         />
                     </div>
@@ -65,9 +65,9 @@ const MainVideoPage = () => {
                         <h3 className=" ml-[30px] text-xl font-kanit font-semibold underline underline-offset-8 mb-4">
                             CONTENT
                         </h3>
-                        <div className="bg-zinc-800 pb-5 rounded-3xl overflow-y-auto max-w-[650px] max-h-[700px]">
-                            <div className="mt-4 md:mt-">
-                                <div className="flex justify-center flex-col items-center gap-4">
+                        <div className="bg-zinc-800 pb-5 rounded-3xl overflow-y-auto max-w-[650px] max-h-[600px]">
+                            <div className="mt-4 md:mt-2">
+                                <div className="flex justify-center flex-col items-center gap-1">
                                 {subcoursename.map((name, idx) => (
                                   <div key={idx} onClick={() => handleClick(idx)}>     
                                     <a href="#" className={`block w-[400px] p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700`}>
