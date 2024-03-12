@@ -2,6 +2,7 @@ import { useState,useEffect } from "react";
 import { axiosInstance } from "../../lib/axios";
 import AfterNav from "../Navbar/afternavbar";
 import LoadingSpinner from "../Loading/LoadingSpinner";
+import { useNavigate } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Card from "../course/course"
@@ -9,7 +10,7 @@ const MainCourse = () => {
   const [userInfo,setUserInfo] = useState([])
   const [data,setCoursedata] = useState([])
   const [loading, setLoading] = useState(true);
-
+  const navigate = useNavigate();
   const getUser = async()=>{
     try{
       const response = await axiosInstance.get("/api/user/verify")
@@ -20,6 +21,9 @@ const MainCourse = () => {
         
     }catch(e){
       console.log(e);
+      if(e.response.status === 500){
+        navigate("/signin");
+      }
     }
   }
   useEffect(() => {

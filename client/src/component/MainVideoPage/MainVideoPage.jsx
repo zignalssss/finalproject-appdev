@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { axiosInstance } from "../../lib/axios";
 import AfterNav from "../Navbar/afternavbar";
 import LoadingSpinner from "../Loading/LoadingSpinner";
-
+import { useNavigate } from "react-router-dom";
 const MainVideoPage = () => {
   const { id } = useParams();
   const [courseInfo, setCourseInfo] = useState(null);
@@ -13,11 +13,11 @@ const MainVideoPage = () => {
   const [index, setIndex] = useState(0);
   const [subcoursevideo, setSubcourseVideo] = useState([]);
   const [subcoursename, setSubcourseName] = useState([]);
-
+  const navigate = useNavigate();
   const getUser = async () => {
     try {
       const response = await axiosInstance.get("/api/user/verify");
-      const courseDataByID = await axiosInstance.get(`/api/course/getcoursebyid/${id}`);
+      const courseDataByID = await axiosInstance.get(`/api/course/getcoursebyid/${id}`); 
       setUserInfo(response.data);
       setCourseInfo(courseDataByID.data);
       setSubcourseVideo(courseDataByID.data.sub_course);
@@ -25,6 +25,9 @@ const MainVideoPage = () => {
       setLoading(false);
     } catch (e) {
       console.log(e);
+      if(e.response.status === 500){
+          navigate("/signin");
+      }
     }
   };
 
