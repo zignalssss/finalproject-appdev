@@ -4,15 +4,19 @@ import React, { useState } from 'react';
 const ProfileSettings = () => {
   // Mock user data
   const [user, setUser] = useState({
-    username: 'exampleuser',
+    firstName: 'John',
+    lastName: 'Doe',
     email: 'user@example.com',
     avatar: 'https://via.placeholder.com/150',
   });
 
   // State variables for form inputs
-  const [usernameInput, setUsernameInput] = useState(user.username);
+  const [firstNameInput, setFirstNameInput] = useState(user.firstName);
+  const [lastNameInput, setLastNameInput] = useState(user.lastName);
   const [emailInput, setEmailInput] = useState(user.email);
   const [avatarInput, setAvatarInput] = useState(user.avatar);
+  const [passwordInput, setPasswordInput] = useState('');
+  const [confirmPasswordInput, setConfirmPasswordInput] = useState('');
 
   // Handle form submission
   const handleSubmit = (e) => {
@@ -20,11 +24,15 @@ const ProfileSettings = () => {
     // Update user information
     setUser({
       ...user,
-      username: usernameInput,
+      firstName: firstNameInput,
+      lastName: lastNameInput,
       email: emailInput,
       avatar: avatarInput,
     });
     // You can send this information to the server here if needed
+    // Reset form inputs
+    setPasswordInput('');
+    setConfirmPasswordInput('');
   };
 
   return (
@@ -43,29 +51,63 @@ const ProfileSettings = () => {
         </div>
         <form onSubmit={handleSubmit} className="mb-4">
           <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2">Username:</label>
+            <label className="block text-gray-700 text-sm font-bold mb-2">First Name:</label>
             <input
               type="text"
-              value={usernameInput}
-              onChange={(e) => setUsernameInput(e.target.value)}
+              value={firstNameInput}
+              onChange={(e) => setFirstNameInput(e.target.value)}
+              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2">Last Name:</label>
+            <input
+              type="text"
+              value={lastNameInput}
+              onChange={(e) => setLastNameInput(e.target.value)}
+              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2">New Password:</label>
+            <input
+              type="password"
+              value={passwordInput}
+              onChange={(e) => setPasswordInput(e.target.value)}
               className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             />
           </div>
           <div className="mb-6">
-            <label className="block text-gray-700 text-sm font-bold mb-2">Email:</label>
+            <label className="block text-gray-700 text-sm font-bold mb-2">Confirm New Password:</label>
             <input
-              type="email"
-              value={emailInput}
-              onChange={(e) => setEmailInput(e.target.value)}
+              type="password"
+              value={confirmPasswordInput}
+              onChange={(e) => setConfirmPasswordInput(e.target.value)}
               className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             />
           </div>
-          <button
-            type="submit"
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-          >
-            Update
-          </button>
+          <div className="flex justify-between">
+            <button
+              type="submit"
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            >
+              Update
+            </button>
+            <button
+              type="button"
+              className="bg-gray-400 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              onClick={() => {
+                // Reset form inputs
+                setFirstNameInput(user.firstName);
+                setLastNameInput(user.lastName);
+                setAvatarInput(user.avatar);
+                setPasswordInput('');
+                setConfirmPasswordInput('');
+              }}
+            >
+              Cancel
+            </button>
+          </div>
         </form>
       </div>
     </div>
