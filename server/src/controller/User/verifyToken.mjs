@@ -20,5 +20,6 @@ export const verifyToken = async(req, res) => {
       return res.status(200).send(userData);
     }catch(e){
       console.log(e);
+      return res.status(500).send({message:"verify Failed!"});;
     }
   }
