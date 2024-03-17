@@ -6,7 +6,7 @@ const SettingPage = () =>{
         <div className="space-y-6 h-screen flex justify-center items-center">
             <div className="mockup-browser border bg-white">
             <div className="mockup-browser-toolbar">
-                <div className="input">https://nextfuture.com</div>
+                <div className="input">https://nextfuture.com/user/setting</div>
             </div>
             <div className="flex justify-center px-4 py-16 bg-base-200">Hello!</div>
         </div>
