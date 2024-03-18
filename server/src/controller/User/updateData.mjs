@@ -1,6 +1,6 @@
 import { client, db_name } from '../../server.mjs';
 import { uploadImageUser } from '../../utils/UploadImg.mjs';
-
+import { hashPassword } from '../../utils/ManagePassword.mjs';
 export const updateData = async (req, res) => {
     try {
         const { id, firstName, lastName, password } = req.body;
@@ -15,7 +15,7 @@ export const updateData = async (req, res) => {
         const updateFields = {};   
         if (firstName) updateFields.fname = firstName;
         if (lastName) updateFields.lname = lastName;
-        if (password) updateFields.password = password;
+        if (password) updateFields.password = await hashPassword(password);
         if (imageUrl) updateFields.img = imageUrl;
 
         const result = await client.db(db_name).collection("userData").findOneAndUpdate(
@@ -24,7 +24,7 @@ export const updateData = async (req, res) => {
             { returnOriginal: false }
         );
 
-        if (result.value) {
+        if (result) {
             res.status(200).json({ message: "Update Successful" });
         } else {
             res.status(404).json({ error: "User not found" });

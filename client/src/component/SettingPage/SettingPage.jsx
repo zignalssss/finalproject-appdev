@@ -87,6 +87,7 @@ function App() {
 
       // Update user info state with updated data
       alert(response.data.message);
+      window.location.reload();
     } catch (error) {
       console.error('Error updating profile:', error);
       alert('Error updating profile. Please try again.');
