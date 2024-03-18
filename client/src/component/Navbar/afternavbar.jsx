@@ -9,6 +9,7 @@ import 'aos/dist/aos.css';
 export default function AfterNav({userObj}){
     const name = `${userObj.fname} ${userObj.lname}`
     const point = userObj.point;
+    const avatar = userObj.img;
     useEffect(() =>{
         AOS.init({duration: 500})
     },[]);
@@ -48,8 +49,10 @@ export default function AfterNav({userObj}){
                     <div className="dropdown dropdown-hover">
                         <div tabIndex={0} role="button" className="btn m-1 shadow-[0_0_10px_rgba(255,255,255,1)] shadow-zinc-200">
                             {name} 
-                            <div className="text-3xl">
-                            <RxAvatar />
+                            <div className="avatar">
+                                <div className="w-[40px] rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                                    <img src={avatar} />
+                                </div>
                             </div>
                         </div>
                         <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-[#18181b] rounded-box w-52 ">
