@@ -1,114 +1,83 @@
 // ProfileSettings.js
 import React, { useState } from 'react';
+import Tilt from 'react-parallax-tilt';
+import { axiosInstance } from '../../lib/axios';
+import { useNavigate } from 'react-router-dom';
+import ButtonLink from '../buttonLink/ButtonLink';
 
 const ProfileSettings = () => {
-  // Mock user data
-  const [user, setUser] = useState({
-    firstName: 'John',
-    lastName: 'Doe',
-    email: 'user@example.com',
-    avatar: 'https://via.placeholder.com/150',
+  const [formData, setFormData] = useState({
+    username: '',
+    password: '',
+    fname: '',
+    lname: '',
+    phonenumber: ''
   });
+  const navigate = useNavigate();
+  const [message, setMessage] = useState('');
 
-  // State variables for form inputs
-  const [firstNameInput, setFirstNameInput] = useState(user.firstName);
-  const [lastNameInput, setLastNameInput] = useState(user.lastName);
-  const [emailInput, setEmailInput] = useState(user.email);
-  const [avatarInput, setAvatarInput] = useState(user.avatar);
-  const [passwordInput, setPasswordInput] = useState('');
-  const [confirmPasswordInput, setConfirmPasswordInput] = useState('');
+  // Set data from user input to formData variable
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
 
-  // Handle form submission
-  const handleSubmit = (e) => {
+  // Submit and post data to Database (MongoDB)
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Update user information
-    setUser({
-      ...user,
-      firstName: firstNameInput,
-      lastName: lastNameInput,
-      email: emailInput,
-      avatar: avatarInput,
-    });
-    // You can send this information to the server here if needed
-    // Reset form inputs
-    setPasswordInput('');
-    setConfirmPasswordInput('');
+    try {
+      await axiosInstance.post('/api/user/login', formData)
+        .then(response => {
+          const token = "welcome!";
+          localStorage.setItem('IsLog', JSON.stringify(token));
+          setMessage('Login successful!');
+          navigate("/allcourse");
+        })
+        .catch(error => {
+          console.error('Error fetching data:', error);
+        });
+    } catch (error) {
+      if (error.response) {
+        setMessage(error.response.data.message || 'Login failed');
+      } else {
+        setMessage('Login failed');
+      }
+    }
   };
 
   return (
-    <div className="bg-gray-200 min-h-screen flex items-center justify-center">
-      <div className="max-w-lg mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-        <h2 className="text-2xl font-bold mb-4">Profile Settings</h2>
-        <div className="flex items-center mb-4">
-          <img src={avatarInput} alt="User Avatar" className="w-16 h-16 rounded-full mr-4" />
-          <input
-            type="text"
-            value={avatarInput}
-            onChange={(e) => setAvatarInput(e.target.value)}
-            placeholder="Avatar URL"
-            className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          />
-        </div>
-        <form onSubmit={handleSubmit} className="mb-4">
-          <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2">First Name:</label>
-            <input
-              type="text"
-              value={firstNameInput}
-              onChange={(e) => setFirstNameInput(e.target.value)}
-              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
+    <div className='flex w-screen h-screen bg-cover bg-login_imge text-white bg-no-repeat justify-center items-center flex-col'>
+      <Tilt>
+        <form onSubmit={handleSubmit} className="bg-slate-700 p-12 rounded-3xl bg-opacity-60 shadow-5xl border-white border-t-2 border-l-2 border-opacity-20 backdrop-filter backdrop-blur-sm">
+          <h2 className="text-4xl font-semibold">Profile Settings</h2>
+          <div className='mt-1'>
+            <label htmlFor="firstName" className="font-medium text-ls ">First Name</label>
+            <input type="text" id="firstName" name="fname" value={formData.fname} onChange={handleChange} className='w-full rounded-lg bg-slate-800 p-2 mt-1'/>
           </div>
-          <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2">Last Name:</label>
-            <input
-              type="text"
-              value={lastNameInput}
-              onChange={(e) => setLastNameInput(e.target.value)}
-              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
+          <div className='mt-1'>
+            <label htmlFor="lastName" className="font-medium text-ls ">Last Name</label>
+            <input type="text" id="lastName" name="lname" value={formData.lname} onChange={handleChange} className='w-full rounded-lg bg-slate-800 p-2 mt-1'/>
           </div>
-          <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2">New Password:</label>
-            <input
-              type="password"
-              value={passwordInput}
-              onChange={(e) => setPasswordInput(e.target.value)}
-              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
+          <div className='mt-1'>
+            <label htmlFor="password" className="font-medium text-ls ">New Password</label>
+            <input type="password" id="password" name="password" value={formData.password} onChange={handleChange} className='w-full rounded-lg bg-slate-800 p-2 mt-1' />
           </div>
-          <div className="mb-6">
-            <label className="block text-gray-700 text-sm font-bold mb-2">Confirm New Password:</label>
-            <input
-              type="password"
-              value={confirmPasswordInput}
-              onChange={(e) => setConfirmPasswordInput(e.target.value)}
-              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
+          <div className='mt-1'>
+            <label htmlFor="confirmPassword" className="font-medium text-ls ">Confirm New Password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" value={formData.confirmPassword} onChange={handleChange} className='w-full rounded-lg bg-slate-800 p-2 mt-1' />
           </div>
-          <div className="flex justify-between">
-            <button
-              type="submit"
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            >
-              Update
-            </button>
-            <button
-              type="button"
-              className="bg-gray-400 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-              onClick={() => {
-                // Reset form inputs
-                setFirstNameInput(user.firstName);
-                setLastNameInput(user.lastName);
-                setAvatarInput(user.avatar);
-                setPasswordInput('');
-                setConfirmPasswordInput('');
-              }}
-            >
-              Cancel
-            </button>
+          <div className="gep-y-4 text-center mt-4">
+            <button className= 'btn bg-sky-600 rounded-lg w-32 active:scale-[.98] active:duration-75 transition-al' type="submit">Update</button>
+          </div>
+          <div className="mt-5 text-sm first-line: active:scale-[.98] active:duration-75 transition-all text-center">
           </div>
         </form>
+      </Tilt>
+      <div className='text-white'>
+        {message && <p>{message}</p>}
       </div>
     </div>
   );
