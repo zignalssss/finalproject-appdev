@@ -6,6 +6,7 @@ import UserRouter from "./routers/User.mjs";
 import AddCourse from "./routers/Course.mjs";
 import cookieParser from "cookie-parser";
 import bodyParser from 'body-parser';
+import multer from "multer";
 dotenv.config();
 
 
@@ -27,6 +28,11 @@ export const client = new MongoClient(URI)
 export const db_name = "enrollDatabase"
 export const SECRET = process.env.SECRET;
 
+
+const multerMid = multer({
+  storage: multer.memoryStorage(),
+});
+app.use(multerMid.single("file"));
 
 app.get("/",(req,res) =>{
     res.send("Greeting!")

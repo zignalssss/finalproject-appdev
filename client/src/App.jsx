@@ -9,7 +9,7 @@ import MainVideoPage from "./component/MainVideoPage/MainVideoPage";
 import TheoreticalCSLearningPath from "./component/learningPath/LearningPath_algo";
 //protect frontend routes
 import PrivateRoutes from "./component/RouteProtected/PrivateRoute";
-import Quizpage from "./component/Quizpage/quizpage";
+import Quizpage from "./component/Quizpage/Quizpage";
 
 export default function App() {
     return(
@@ -17,7 +17,9 @@ export default function App() {
             <Routes>
                 <Route path="/" element={<Homepage/>}/>
                 <Route path="/signup" element={<Signup/>}/>
+                <Route path="/signin" element={<LoginPage/>}/>                
                 <Route path="/signin" element={<LoginPage/>}/>
+                
                 <Route path="/setting" element={<SettingPage/>}/>
                 <Route path="/quiz" element={<Quizpage/>}/>
 

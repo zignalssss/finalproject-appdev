@@ -11,12 +11,7 @@ export const verifyToken = async(req, res) => {
           message: "User not found"
         })
       }
-      const userObj ={
-        username:userData.username,
-        fname:userData.fname,
-        lname:userData.lname,
-        point:userData.point
-      }
+
       return res.status(200).send(userData);
     }catch(e){
       console.log(e);

@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { axiosInstance } from "../../lib/axios";
 import AfterNav from "../Navbar/afternavbar";
 import LoadingSpinner from "../Loading/LoadingSpinner";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const MainVideoPage = () => {
   const { id } = useParams();
   const [courseInfo, setCourseInfo] = useState(null);
@@ -83,6 +83,7 @@ const MainVideoPage = () => {
                                 </div>
                             </div>
                         </div>
+                        <Link to="/quiz"><button className="btn ml-[185px] mt-10">Quiz</button></Link>
                     </div>
                 </div>
                   <h1 className="text-xl font-bold mt-10">
