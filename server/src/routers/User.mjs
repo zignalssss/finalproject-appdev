@@ -6,6 +6,8 @@ import { UserCourse } from "../controller/User/adduserCourse.mjs";
 import { verifyToken } from "../controller/User/verifyToken.mjs";
 import { addPoint } from "../controller/User/addPoint.mjs";
 import { logout } from "../controller/User/logout.mjs";
+import { updateData } from "../controller/User/updateData.mjs";
+
 const router = express.Router(); 
 
 
@@ -13,8 +15,10 @@ router.get("/verify",verifyToken);
 router.post("/logout",logout);
 router.post("/register",register);
 router.post("/login",login);
-router.post("/adduserCourse",UserCourse)
-router.post("/updatepoint",updatePoint)
-router.post("/addpoint",addPoint)
+router.post("/adduserCourse",UserCourse);
+router.post("/updatepoint",updatePoint);
+router.post("/addpoint",addPoint);
+router.put("/updateData",updateData);
+
 
 export default router;
