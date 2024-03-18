@@ -8,7 +8,7 @@ import MainCourse from "./component/Allcourse/MainCourse"
 import MainVideoPage from "./component/MainVideoPage/MainVideoPage";
 //protect frontend routes
 import PrivateRoutes from "./component/RouteProtected/PrivateRoute";
-import Quizpage from "./component/Quizpage/quizpage";
+import Quizpage from "./component/Quizpage/Quizpage";
 
 export default function App() {
     return(
