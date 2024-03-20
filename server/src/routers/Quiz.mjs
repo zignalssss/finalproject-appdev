@@ -1,14 +1,11 @@
 import express from "express";
-import { addCourse } from "../controller/Course/addCourse.mjs"
-import { getCourse } from "../controller/Course/getCourse.mjs"
-import { getNewCourse } from "../controller/Course/getNewCourse.mjs";
-import { getcourseByID } from "../controller/Course/getcourseByID.mjs";
+import { addQuiz } from "../controller/Quiz/addQuiz.mjs"
+import { getQuizByID } from "../controller/Quiz/getQuizbyId.mjs";
+
 const router = express.Router(); 
 
-router.get("/getallcourse",getCourse);
-router.get("/getnewcourse",getNewCourse);
-router.get("/getcoursebyid/:id",getcourseByID);
-router.post("/addcourse",addCourse);
+router.get("/getquizbyid/:id", getQuizByID);
+router.post("/addquiz",addQuiz);
 
 
 export default router;

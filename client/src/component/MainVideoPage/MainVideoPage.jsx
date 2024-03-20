@@ -33,7 +33,6 @@ const MainVideoPage = () => {
 
   const handleClick = (clickedIndex) => {
     setIndex(clickedIndex);
-    console.log(index)
   };
 
   useEffect(() => {
@@ -85,7 +84,7 @@ const MainVideoPage = () => {
                         </div>
                         <div>
                        <span className="ml-4 underline font-bold underline-offset-8 mt-5"> Quiz Get u Point ! : </span>
-                        <Link to="/quiz"><button className="btn ml-[20px] mt-5 transition-all duration-300 hover:drop-shadow-[0_0_20px_rgba(255,255,255,0.6)]">Quiz</button></Link>
+                        <Link to={`/quiz/${id}`}><button className="btn ml-[20px] mt-5 transition-all duration-300 hover:drop-shadow-[0_0_20px_rgba(255,255,255,0.6)]">Quiz</button></Link>
                         </div>
                         
                     </div>

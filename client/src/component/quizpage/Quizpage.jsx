@@ -3,7 +3,7 @@ import { axiosInstance } from "../../lib/axios";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import AfterNav from "../Navbar/afternavbar";
-import axiosInstance from "../../lib/axios";
+
 
 const QuizPage = () => {
   const [userInfo, setUserInfo] = useState([]);
@@ -51,7 +51,7 @@ const QuizPage = () => {
     if (currentQuestion === questions.length - 1) {
       setQuizCompleted(true); // Set quizCompleted to true when all questions are answered
       const minScoreToPass = Math.floor(questions.length * 0.8); //80% correct
-      if (score >= minScoreToPass) {
+      if (score+1 >= minScoreToPass ) {
         setQuizPass(true);
       }
     } else {

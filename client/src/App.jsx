@@ -24,7 +24,7 @@ export default function App() {
                     <Route path="/video/:id" element={<MainVideoPage/>}/>
                     <Route path="/algopath" element={<TheoreticalCSLearningPath/>}/>
                     <Route path="/setting" element={<SettingPage/>}/>
-                    <Route path="/quiz" element={<Quizpage/>}/>
+                    <Route path="/quiz/:id" element={<Quizpage/>}/>
                 </Route>
             </Routes>
         </>
