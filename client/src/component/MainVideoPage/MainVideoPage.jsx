@@ -83,7 +83,11 @@ const MainVideoPage = () => {
                                 </div>
                             </div>
                         </div>
-                        <Link to="/quiz"><button className="btn ml-[185px] mt-10">Quiz</button></Link>
+                        <div>
+                       <span className="ml-4 underline font-bold underline-offset-8 mt-5"> Quiz Get u Point ! : </span>
+                        <Link to="/quiz"><button className="btn ml-[20px] mt-5 transition-all duration-300 hover:drop-shadow-[0_0_20px_rgba(255,255,255,0.6)]">Quiz</button></Link>
+                        </div>
+                        
                     </div>
                 </div>
                   <h1 className="text-xl font-bold mt-10">
