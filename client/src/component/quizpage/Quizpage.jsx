@@ -43,6 +43,7 @@ const quizpage = () =>{
       ];
 
       const checkAns = (e, ans) => {
+        e.preventDefault();
         if(lock===false){
           if(questions.ans===questions[currentQuestion].ans){
             setScore(score + 1);
