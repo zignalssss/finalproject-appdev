@@ -15,6 +15,7 @@ export const register = async (req, res) => {
             phonenumber,
             point: 100,
             courses: [],
+            F_courses:[],
             img:"https://firebasestorage.googleapis.com/v0/b/appdev-image-storage.appspot.com/o/blank-profile-picture-973460_1280.png?alt=media&token=a724e3e3-8d78-4340-9072-0f6937f789d0"
         };
 

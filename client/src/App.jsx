@@ -17,19 +17,14 @@ export default function App() {
             <Routes>
                 <Route path="/" element={<Homepage/>}/>
                 <Route path="/signup" element={<Signup/>}/>
-                <Route path="/signin" element={<LoginPage/>}/>                
-                <Route path="/signin" element={<LoginPage/>}/>
-                
-                <Route path="/setting" element={<SettingPage/>}/>
-                <Route path="/quiz" element={<Quizpage/>}/>
-
-                {/* <Route path="/load" element={<LoadingSpinner/>}/> */}
-                
+                <Route path="/signin" element={<LoginPage/>}/>                           
                 <Route element={<PrivateRoutes />}>
                     <Route path="/allcourse" element={<MainCourse/>}/>
                     <Route path="/webpath" element={<LearningPath/>}/>
                     <Route path="/video/:id" element={<MainVideoPage/>}/>
                     <Route path="/algopath" element={<TheoreticalCSLearningPath/>}/>
+                    <Route path="/setting" element={<SettingPage/>}/>
+                    <Route path="/quiz/:id" element={<Quizpage/>}/>
                 </Route>
             </Routes>
         </>

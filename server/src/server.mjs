@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import cors from "cors";
 import UserRouter from "./routers/User.mjs";
 import AddCourse from "./routers/Course.mjs";
+import Quiz from "./routers/Quiz.mjs"
 import cookieParser from "cookie-parser";
 import bodyParser from 'body-parser';
 import multer from "multer";
@@ -39,8 +40,8 @@ app.get("/",(req,res) =>{
 })
 
 app.use("/api/user",UserRouter);
-app.use("/api/course",AddCourse)
-
+app.use("/api/course",AddCourse);
+app.use("/api/quiz",Quiz);
 app.listen(PORT,()=>{
     console.log(`server is Running on http://localhost:${PORT}`);
 })

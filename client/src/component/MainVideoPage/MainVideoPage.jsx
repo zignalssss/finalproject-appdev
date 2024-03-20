@@ -6,6 +6,7 @@ import AfterNav from "../Navbar/afternavbar";
 import LoadingSpinner from "../Loading/LoadingSpinner";
 import { Link, useNavigate } from "react-router-dom";
 const MainVideoPage = () => {
+
   const { id } = useParams();
   const [courseInfo, setCourseInfo] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -30,10 +31,10 @@ const MainVideoPage = () => {
       }
     }
   };
+  
 
   const handleClick = (clickedIndex) => {
     setIndex(clickedIndex);
-    console.log(index)
   };
 
   useEffect(() => {
@@ -43,7 +44,8 @@ const MainVideoPage = () => {
   if (loading) {
     return <LoadingSpinner />;
   }
-
+  const userFinish = userInfo.F_courses
+  const  IsFinish = userFinish.includes(parseInt(id));
   return (
     <div>
       <AfterNav userObj={userInfo} />
@@ -83,7 +85,14 @@ const MainVideoPage = () => {
                                 </div>
                             </div>
                         </div>
-                        <Link to="/quiz"><button className="btn ml-[185px] mt-10">Quiz</button></Link>
+                        {!IsFinish && (
+                          <div>
+                            <span className="ml-4 underline font-bold underline-offset-8 mt-5"> Quiz Get u Point ! : </span>
+                            <Link to={`/quiz/${id}`}>
+                              <button className="btn ml-[20px] mt-5 transition-all duration-300 hover:drop-shadow-[0_0_20px_rgba(255,255,255,0.6)]">Quiz</button>
+                            </Link>
+                          </div>
+                        )}     
                     </div>
                 </div>
                   <h1 className="text-xl font-bold mt-10">

@@ -1,6 +1,5 @@
 import { useEffect } from "react"
 import { axiosInstance } from "../../lib/axios";
-import { RxAvatar } from "react-icons/rx";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import AOS from 'aos';
