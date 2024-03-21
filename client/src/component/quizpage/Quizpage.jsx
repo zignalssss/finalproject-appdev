@@ -13,36 +13,9 @@ const QuizPage = () => {
   const [score, setScore] = useState(0);
   const [quizCompleted, setQuizCompleted] = useState(false); // New state to track quiz completion
   const [quizPass,setQuizPass] = useState(false);
+  const [questions,setQuestions] = useState([])
   const navigate = useNavigate();
-  const questions = [
-    {
-      "question": "1. What time",
-      "choices": [
-        { "text": "00:00", "answer": false },
-        { "text": "10:00", "answer": true },
-        { "text": "01:00", "answer": false },
-        { "text": "02:00", "answer": false }
-      ]
-    },
-    {
-      "question": "2. What time",
-      "choices": [
-        { "text": "00:00", "answer": false },
-        { "text": "10:00", "answer": true },
-        { "text": "01:00", "answer": false },
-        { "text": "02:00", "answer": false }
-      ]
-    },
-    {
-      "question": "3. What time",
-      "choices": [
-        { "text": "00:00", "answer": false },
-        { "text": "10:00", "answer": false },
-        { "text": "01:00", "answer": true },
-        { "text": "02:00", "answer": false }
-      ]
-    }
-  ];
+ 
 
   const checkAns = (e, answer) => {
     e.preventDefault();
@@ -92,6 +65,8 @@ const QuizPage = () => {
   const getUser = async () => {
     try {
       const response = await axiosInstance.get("/api/user/verify")
+      const quiz = await axiosInstance.get(`/api/quiz/getquizbyid/${id}`)
+      setQuestions(quiz.data.quiz)
       setUserInfo(response.data);
       setLoading(false);
     } catch (e) {
