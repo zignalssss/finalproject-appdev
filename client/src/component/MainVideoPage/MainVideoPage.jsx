@@ -70,12 +70,12 @@ const MainVideoPage = () => {
                         <h3 className=" ml-[30px] text-xl font-kanit font-semibold underline underline-offset-8 mb-4">
                             CONTENT
                         </h3>
-                        <div className="bg-zinc-800 pb-5 rounded-3xl overflow-y-auto max-w-[650px] max-h-[600px]">
+                        <div className="bg-zinc-800 pb-5 rounded-3xl overflow-y-auto max-w-[650px] max-h-[580px]">
                             <div className="mt-4 md:mt-4">
                                 <div className="flex justify-center flex-col items-center gap-1">
                                 {subcoursename.map((name, idx) => (
                                   <div key={idx} onClick={() => handleClick(idx)}>     
-                                    <a href="#" className={`block w-[400px] p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700`}>
+                                    <a href="#" className={`block w-[350px] p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700`}>
                                         <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
                                             {name}
                                         </h5>
@@ -95,7 +95,7 @@ const MainVideoPage = () => {
                         )}     
                     </div>
                 </div>
-                  <h1 className="text-xl font-bold mt-10">
+                  <h1 className="text-xl font-bold mt-3">
                   {subcoursename[index]}
                   </h1>
                  <div className="mt-4">

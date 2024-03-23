@@ -47,7 +47,7 @@ const QuizPage = () => {
   };
     try {
       if(userInfo.point + 50 > 250){
-        alert("Limit Point is 150 Please Use Your Point!!!")
+        alert("Limit Point is 250 Please Use Your Point!!!")
         navigate(`/video/${id}`)
       }else{
         await axiosInstance.post("/api/user/addpoint", Point_Add)
