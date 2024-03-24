@@ -13,10 +13,7 @@ export const addPoint = async (req, res) => {
         }
         const userpoint = findUser.point || 0; // Default to 0 if userpoint is undefined
         const newpoint = point_enroll + userpoint;
-        if (newpoint > 250) {
-            res.status(401).json({ message: "Point Overflow! Use Your Point" });
-            return; // Added return here
-        }
+        
         await client.db(db_name).collection("userData").updateOne(
             { _id: _id },
             { $set: { point: newpoint } },

@@ -2,7 +2,8 @@ import { useState,useEffect } from "react";
 import { axiosInstance } from "../../lib/axios";
 import AfterNav from "../Navbar/afternavbar";
 import LoadingSpinner from "../Loading/LoadingSpinner";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"
+import ResponsiveNav from "../Navbar/responsivenav";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Card from "../course/course"
@@ -34,10 +35,12 @@ const MainCourse = () => {
     if (loading) {
       return <LoadingSpinner />; 
     }
-
+    const screenWidth = window.innerWidth;
+    // Conditionally render the appropriate navbar based on screen width
+    const NavbarComponent = screenWidth < 1300  ? ResponsiveNav : AfterNav;
     return (
       <>
-        <AfterNav userObj={userInfo} />
+        <NavbarComponent userObj={userInfo} />
         <div className="bg-gradient-to-t from-stone-950 via-gray-800 from-80% to-gray-800 text-white font-kanit flex py-40 justify-center mx-auto px-24">
           <div data-aos="fade-up">
             <h1 className="m-10 underline underline-offset-8 text-bold text-lg md:text-2xl text-bold">
