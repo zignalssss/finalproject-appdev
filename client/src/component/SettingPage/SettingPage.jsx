@@ -3,7 +3,7 @@ import LoadingSpinner from "../Loading/LoadingSpinner";
 import { useNavigate } from 'react-router-dom';
 import { axiosInstance } from '../../lib/axios';
 import AfterNav from '../Navbar/afternavbar';
-
+import ResponsiveNav from '../Navbar/responsivenav';
 function App() {
   const [fname, setFName] = useState('');
   const [lname, setLName] = useState('');
@@ -97,9 +97,14 @@ function App() {
   if (loading) {
     return <LoadingSpinner />;
   }
+    // Determine the screen width
+    const screenWidth = window.innerWidth;
+    // Conditionally render the appropriate navbar based on screen width
+    const NavbarComponent = screenWidth < 1300 ? ResponsiveNav : AfterNav;
+
   return (
     <>
-    <AfterNav userObj={userInfo} />
+    <NavbarComponent userObj={userInfo} />
     <div className="bg-login_imge min-h-screen pb-24">
       <div className="container mx-auto max-w-3xl ">
         <h1 className="text-2xl font-bold text-white px-6 md:px-0 pt-10 underline underline-offset-8">Account Settings</h1>

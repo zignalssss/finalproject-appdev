@@ -3,7 +3,7 @@ import { axiosInstance } from "../../lib/axios";
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import AfterNav from "../Navbar/afternavbar";
-
+import ResponsiveNav from "../Navbar/responsivenav";
 
 const QuizPage = () => {
   const {id} = useParams();
@@ -84,10 +84,13 @@ const QuizPage = () => {
   if (loading) {
     return <LoadingSpinner />;
   }
-
+    // Determine the screen width
+    const screenWidth = window.innerWidth;
+    // Conditionally render the appropriate navbar based on screen width
+    const NavbarComponent = screenWidth < 1300 ? ResponsiveNav : AfterNav;
   return (
     <>
-    <AfterNav userObj={userInfo} />
+    <NavbarComponent userObj={userInfo} />
     <div className="flex justify-center items-center w-screen h-screen bg-cover bg-login_imge">
       <form className="bg-slate-700 p-12 rounded-[60px] bg-opacity-40 shadow-5xl border-white border-t-2 border-l-2 border-opacity-20 backdrop-filter w-2/6 h-1/1">
         <div className="flex justify-center text-white text-[40px] font-kanit">QUIZ</div>
