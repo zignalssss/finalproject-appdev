@@ -46,17 +46,10 @@ const QuizPage = () => {
       course_id: parseInt(id)
   };
     try {
-      if(userInfo.point + 50 > 250){
-        alert("Limit Point is 250 Please Use Your Point!!!")
-        navigate(`/video/${id}`)
-      }else{
         await axiosInstance.post("/api/user/addpoint", Point_Add)
         await axiosInstance.post("/api/user/finishcourse", FinishCourseForUser)
-          alert("Congratulations!")
-          
+          alert("Congratulations!")       
           navigate(`/video/${id}`)
-      }
-   
     } catch (e) {
       console.log(e)
     }
