@@ -18,6 +18,7 @@ const app = express();
 app.use(bodyParser.json())
 app.use(cookieParser())
 app.use(express.json());
+//CORS
 app.use(function(req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
@@ -32,7 +33,7 @@ app.use(
       credentials: true,
     })
   );
-
+//END CORS
 export const client = new MongoClient(URI)
 export const db_name = "enrollDatabase"
 export const SECRET = process.env.SECRET;
