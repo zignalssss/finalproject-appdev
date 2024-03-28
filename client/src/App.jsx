@@ -9,7 +9,7 @@ import MainVideoPage from "./component/MainVideoPage/MainVideoPage";
 import TheoreticalCSLearningPath from "./component/learningPath/LearningPath_algo";
 //protect frontend routes
 import PrivateRoutes from "./component/RouteProtected/PrivateRoute";
-import Quizpage from "./component/Quizpage/Quizpage";
+import Quizpage from "./component/quizpage/Quizpage";
 
 export default function App() {
     return(
