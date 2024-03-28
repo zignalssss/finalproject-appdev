@@ -8,7 +8,7 @@ import Quiz from "./routers/Quiz.mjs"
 import cookieParser from "cookie-parser";
 import bodyParser from 'body-parser';
 import multer from "multer";
-dotenv.config();
+dotenv.config({path:'../.env'})
 
 
 const PORT = process.env.PORT;
@@ -20,7 +20,7 @@ app.use(cookieParser())
 app.use(express.json());
 app.use(
     cors({
-      origin: "http://localhost:5173" || config.origin,
+      origin: "http://localhost:5173" || process.env.origin,
       credentials: true,
     })
   );
