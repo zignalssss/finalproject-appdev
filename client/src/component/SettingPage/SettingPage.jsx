@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { axiosInstance } from '../../lib/axios';
 import AfterNav from '../Navbar/afternavbar';
 import ResponsiveNav from '../Navbar/responsivenav';
-function App() {
+function SettingPage() {
   const [fname, setFName] = useState('');
   const [lname, setLName] = useState('');
   const [password, setPassword] = useState('');
@@ -155,4 +155,4 @@ function App() {
   );
 }
 
-export default App;
+export default SettingPage;

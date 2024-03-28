@@ -34,7 +34,7 @@ export default function ResponsiveNav({ userObj }) {
                 </div>
                 <div className="navbar-end">
                     <div className="dropdown dropdown-hover">
-                        <div tabIndex={0} role="button" className="btn text-[10px] m-1 shadow-[0_0_10px_rgba(255,255,255,1)] shadow-zinc-200" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                        <div tabIndex={0} role="button" className="btn text-[11px] m-1 shadow-[0_0_10px_rgba(255,255,255,1)] shadow-zinc-200" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                             {name}
                             <div className="avatar">
                                 <div className="w-[30px] rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
