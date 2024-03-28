@@ -18,9 +18,17 @@ const app = express();
 app.use(bodyParser.json())
 app.use(cookieParser())
 app.use(express.json());
+app.use(function(req, res, next) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  next();
+});
+
 app.use(
     cors({
-      origin: process.env.origin,
+      origin: "http://localhost:5173" || process.env.origin,
       credentials: true,
     })
   );
