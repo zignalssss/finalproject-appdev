@@ -20,7 +20,7 @@ export const login = async(req,res) => {
         }
         const payload = { _id:findUser._id ,gmail:findUser.gmail };
         const token = jwt.sign(payload,SECRET, { expiresIn: '1h' });
-        res.cookie('token',token ,{ httpOnly:true });
+        res.cookie('token',token ,{ httpOnly:true   ,sameSite: "none",secure: true,});
         res.status(200).json({message:"login successfuly"});
     }catch(e){
         console.log(e);
