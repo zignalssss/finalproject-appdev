@@ -1,7 +1,7 @@
 
 import Tilt from 'react-parallax-tilt'
 import React, { useState } from 'react';
-import axios from 'axios';
+import { axiosInstance } from '../../lib/axios';
 import { useNavigate } from 'react-router-dom';
 import ButtonLink from '../buttonLink/ButtonLink';
 const RegisterPage = () => {
@@ -31,7 +31,7 @@ const RegisterPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5050/api/user/register', formData)
+      await axiosInstance.post('/api/user/register', formData)
           .then(response => {
             setMessage('Registration successful!');
             navigate("/signin");
